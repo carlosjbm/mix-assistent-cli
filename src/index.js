@@ -1,20 +1,30 @@
 function showWelcome() {
   console.log(`
 
-    ╔═══════════════════════════════════════════════════════════╗
+    ╔═══════════════════════════════════════════════════════════════════╗
     ║                                                           ║
-    ║   Validación de Estructura de Carpetas                    ║
+    ║   OpenMix CLI - Asistente de Automatización                ║
     ║                                                           ║
-    ║   Comandos disponibles:                                   ║
+    ║   Comandos disponibles:                                      ║
+    ║                                                           ║
+    ║   📂 VALIDAR ESTRUCTURA:                                  ║
     ║     • npm run validate           - Modo interactivo       ║
     ║     • npm run validate <ruta>    - Validar específica     ║
-    ║     • npm run validate <ruta> <md> - Con archivo MD       ║
-    ║     • npm run clone <origen> <dest> - Clonar archivo      ║
-    ║  • npm run clone <origen> <dest> --directory - Directorio ║
+    ║     • npm run validate -- i     - Validar ruta por defecto ║
     ║                                                           ║
-    ║   El sistema comparará la estructura contra               ║
-    ║   un archivo 'structure.md' en la carpeta objetivo.       ║
-    ║   Compatible con rutas usando / o                         ║
+    ║   🔧 AJUSTAR ESTRUCTURA:                                  ║
+    ║     • npm run fix -- <modulo>   - Ajustar estructura      ║
+    ║       (> npm run fix -- acc)                                 ║
+    ║                                                           ║
+    ║   📦 CLONAR ARCHIVOS:                                     ║
+    ║     • npm run clone <origen> <dest> --directory           ║
+    ║                                                           ║
+    ║   🔄 ACTUALIZAR ZUN:                                      ║
+    ║     • npm run act -- acc     - Valida y actualiza ZUN   ║
+    ║                                                           ║
+    ║   Pasos para actualizar ZUN:                             ║
+    ║     1. npm run fix -- acc     (Ajustar estructura)      ║
+    ║     2. npm run act -- acc     (Clonar recursos)         ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝
 
