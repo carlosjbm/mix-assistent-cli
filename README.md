@@ -4,7 +4,7 @@ Asistente CLI para la automatización de procesos repetitivos.
 
 ## Descripción
 
-Openmix es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`.
+Openmix es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN automáticamente.
 
 ## Requisitos
 
@@ -30,8 +30,26 @@ npm run validate
 # Validar una ruta específica
 npm run validate /ruta/del/proyecto
 
-# Validar con un archivo de estructura específico
-npm run validate /ruta/del/proyecto /ruta/structure.md
+# Validar ruta por defecto (definida en el código)
+npm run validate -- i
+```
+
+### Ajuste de Estructura
+
+Ajusta la estructura de carpetas automáticamente creando las carpetas faltantes.
+
+```bash
+# Ajustar estructura de un módulo específico
+npm run fix -- acc
+```
+
+### Actualización de ZUN
+
+Actualiza los recursos de ZUN validando primero la estructura y luego clonando los archivos.
+
+```bash
+# Validar estructura y clonar recursos
+npm run act -- acc
 ```
 
 ### Verificar estructura desde la raíz del proyecto
@@ -45,13 +63,17 @@ npm start
 ```
 opentest/
 ├── src/
-│   ├── index.js           # Punto de entrada
+│   ├── index.js                # Punto de entrada
 │   ├── utils/
 │   │   ├── validateStructure.js   # Valida la estructura de carpetas
-│   │   └── adjustStructure.js     # Crea carpetas/archivos faltantes
+│   │   ├── adjustStructure.js     # Crea carpetas/archivos faltantes
+│   │   ├── actZun.js             # Actualiza recursos ZUN
+│   │   └── fixFolderEspecific.js   # Ajusta estructura por módulos
 │   └── services/
-│       └── cloneFiles.js  # Clona archivos y directorios
-├── structure.md           # Archivo con la estructura esperada
+│       ├── cloneFiles.js         # Clona archivos y directorios
+│       └── fixFolderEspecific.js # Define rutas de módulos
+├── structure.md               # Archivo con la estructura esperada
+├── acc_folder_structure.md    # Estructura específica para ZUN
 ├── package.json
 └── README.md
 ```
@@ -76,12 +98,18 @@ skills/
 
 ## Flujo de Trabajo
 
+### Validación
 1. El usuario ejecuta `npm run validate`
 2. El sistema solicita la ruta de la carpeta a validar
 3. Si no existe `structure.md` en la ruta, pregunta si desea copiar el template de la raíz
 4. El sistema compara la estructura actual con la esperada
 5. Muestra las diferencias (carpetas faltantes o extras)
 6. Permite al usuario ajustar la estructura automáticamente
+
+### Actualización de ZUN
+1. Ejecutar `npm run fix -- acc` para ajustar la estructura
+2. Ejecutar `npm run act -- acc` para clonar los recursos
+3. El sistema valida la estructura antes de clonar
 
 ## Clonación de Archivos y Directorios
 
@@ -92,22 +120,24 @@ Permite copiar archivos o directorios completos a otra ubicación.
 npm run clone -- origen.txt destino.txt
 
 # Clonar un directorio
-npm run clone -- /ruta/origen /ruta/destino -- --directory
+npm run clone -- /ruta/origen /ruta/destino --directory
 ```
 
 **Nota:** El sistema es compatible con rutas que usen `/` o `\` indistintamente.
 
 ## Comandos Disponibles
 
-| Comando                                        | Descripción                       |
-| ---------------------------------------------- | --------------------------------- |
-| `npm start`                                    | Muestra la pantalla de bienvenida |
-| `npm run validate`                             | Modo interactivo de validación    |
-| `npm run validate <ruta>`                      | Validar carpeta específica        |
-| `npm run validate <ruta> <archivo>`            | Validar con archivo MD específico |
-| `npm run clone <origen> <dest>`                | Clonar archivo                    |
-| `npm run clone <origen> <dest> -- --directory` | Clonar directorio                 |
-| `npm test`                                     | Ejecutar pruebas                  |
+| Comando                                        | Descripción                          |
+| ---------------------------------------------- | ------------------------------------ |
+| `npm start`                                    | Muestra la pantalla de bienvenida    |
+| `npm run validate`                             | Modo interactivo de validación      |
+| `npm run validate <ruta>`                      | Validar carpeta específica          |
+| `npm run validate -- i`                         | Validar ruta por defecto             |
+| `npm run fix -- <modulo>`                       | Ajustar estructura (ej: acc)       |
+| `npm run act -- acc`                           | Actualizar ZUN                      |
+| `npm run clone <origen> <dest>`                | Clonar archivo                      |
+| `npm run clone <origen> <dest> -- --directory` | Clonar directorio                  |
+| `npm test`                                     | Ejecutar pruebas                    |
 
 ## Licencia
 
