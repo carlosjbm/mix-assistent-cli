@@ -9,7 +9,7 @@ function showWelcome() {
     ║                                                           ║
     ║    VALIDAR ESTRUCTURA:                                    ║
     ║     • npm run validate           - Modo interactivo       ║
-    ║     • npm run validate <ruta>    - Validar específica     ║
+    ║     • npm run validate <ruta>   - Validar específica     ║
     ║     • npm run validate -- i     - Validar ruta por defecto ║
     ║                                                           ║
     ║      AJUSTAR ESTRUCTURA:                                  ║
@@ -22,6 +22,9 @@ function showWelcome() {
     ║        ACTUALIZAR ZUN:                                    ║
     ║     • npm run act -- <modulo>   - Valida y actualiza       ║
     ║       (acc, pms, sma)                                  ║
+    ║                                                           ║
+    ║    MÓDULOS INSTALADOS:                                   ║
+    ║     • npm run installed       - Ver módulos instalados   ║
     ║                                                           ║
     ║   Módulos ZUN disponibles:                             ║
     ║     • acc  - ZunAccess                               ║

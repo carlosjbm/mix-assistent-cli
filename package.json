@@ -9,7 +9,8 @@
     "validate": "node src/utils/validateStructure.js",
     "clone": "node src/services/cloneFiles.js",
     "act": "node src/utils/actZun.js",
-    "fix": "node src/services/fixFolderEspecific.js"
+    "fix": "node src/services/fixFolderEspecific.js",
+    "installed": "node src/utils/installedModules.js"
   },
   "keywords": [],
   "author": "carlosjbm",
