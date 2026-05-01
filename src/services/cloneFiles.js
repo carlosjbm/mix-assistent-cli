@@ -1,6 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 
+const styles = {
+  reset: "\x1b[0m",
+  green: "\x1b[32m",
+  red: "\x1b[31m",
+  blue: "\x1b[34m",
+  dim: "\x1b[2m",
+};
+
 function normalizePath(inputPath) {
   if (!inputPath) return inputPath;
   let normalized = inputPath.trim();
@@ -23,7 +31,7 @@ function cloneFile(sourcePath, destPath) {
   }
 
   fs.copyFileSync(sourcePath, destPath);
-  console.log(`  ✓ Copiado: ${path.basename(sourcePath)}`);
+  console.log(`  ${styles.green}✓${styles.reset} ${path.basename(sourcePath)}`);
 }
 
 function cloneDirectory(sourcePath, destPath) {
@@ -49,7 +57,7 @@ function cloneDirectory(sourcePath, destPath) {
       cloneDirectory(srcItem, destItem);
     } else {
       fs.copyFileSync(srcItem, destItem);
-      console.log(`  ✓ Copiado: ${item}`);
+      console.log(`  ${styles.green}✓${styles.reset} ${item}`);
     }
   }
 }
@@ -63,7 +71,7 @@ function cloneFiles(source, destination, isDirectory = false) {
     }
     return true;
   } catch (error) {
-    console.error(`Error al clonar: ${error.message}`);
+    console.error(`${styles.red}Error al clonar: ${error.message}${styles.reset}`);
     return false;
   }
 }
@@ -74,20 +82,20 @@ function main() {
 
   if (!source || !destination) {
     console.error(
-      "Uso: node cloneFiles.js <origen> <destino> [--directory]"
+      `${styles.red}Uso: node cloneFiles.js <origen> <destino> [--directory]${styles.reset}`
     );
     process.exit(1);
   }
 
   const isDirectory = process.argv.includes("--directory");
 
-  console.log(`\nClonando de: ${source}`);
-  console.log(`Hacia: ${destination}\n`);
+  console.log(`\n${styles.blue}Clonando de:${styles.reset} ${source}`);
+  console.log(`${styles.blue}Hacia:${styles.reset} ${destination}\n`);
 
   if (cloneFiles(source, destination, isDirectory)) {
-    console.log("\n✓ Clonación completada.\n");
+    console.log(`\n${styles.green}✓ Clonación completada.${styles.reset}\n`);
   } else {
-    console.log("\n✗ Error en la clonación.\n");
+    console.log(`\n${styles.red}✗ Error en la clonación.${styles.reset}\n`);
     process.exit(1);
   }
 }
