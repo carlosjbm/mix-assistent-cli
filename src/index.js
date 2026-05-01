@@ -1,39 +1,44 @@
+const { startInteractive } = require("./services/interactiveCLI");
+
 function showWelcome() {
+  const styles = {
+    reset: "\x1b[0m",
+    green: "\x1b[32m",
+    blue: "\x1b[34m",
+  };
+
   console.log(`
 
     ╔═══════════════════════════════════════════════════════════╗
     ║                                                           ║
     ║   OpenMix CLI - Asistente de Automatización v1.0.0        ║
     ║ ********************************************************* ║
-    ║   Comandos disponibles:                                   ║
+    ║   Escribe un comando o usa los atajos:                    ║
     ║                                                           ║
     ║    VALIDAR ESTRUCTURA:                                    ║
-    ║     • npm run validate           - Modo interactivo       ║
-    ║     • npm run validate <ruta>   - Validar específica     ║
-    ║     • npm run validate -- i     - Validar ruta por defecto ║
+    ║     • validate           - Modo interactivo               ║
+    ║     • validate <ruta>   - Validar específica              ║
+    ║     • validate -- i     - Validar ruta por defecto        ║
     ║                                                           ║
     ║      AJUSTAR ESTRUCTURA:                                  ║
-    ║     • npm run fix -- <modulo>   - Ajustar estructura      ║
-    ║       (acc, pms, sma)                                  ║
+    ║     • fix -- <modulo>   - Ajustar estructura              ║
+    ║       (acc, pms, st)                                      ║
     ║                                                           ║
     ║    CLONAR ARCHIVOS:                                       ║
-    ║     • npm run clone <origen> <dest> --directory          ║
+    ║     • clone <origen> <dest> --directory                   ║
     ║                                                           ║
     ║        ACTUALIZAR ZUN:                                    ║
-    ║     • npm run act -- <modulo>   - Valida y actualiza       ║
-    ║       (acc, pms, sma)                                  ║
+    ║     • act -- <modulo>   - Valida y actualiza              ║
+    ║       (acc, pms, sma)                                     ║
     ║                                                           ║
-    ║    MÓDULOS INSTALADOS:                                   ║
-    ║     • npm run installed       - Ver módulos instalados   ║
+    ║    MÓDULOS INSTALADOS:                                    ║
+    ║     • installed       - Ver módulos instalados            ║
+    ║     • adjust         - Crear carpetas faltantes           ║
     ║                                                           ║
-    ║   Módulos ZUN disponibles:                             ║
-    ║     • acc  - ZunAccess                               ║
-    ║     • pms  - ZunPMS                                 ║
-    ║     • sma  - ZunSMA                                 ║
-    ║                                                           ║
-    ║   Flujo de actualización:                            ║
-    ║     1. npm run fix -- <modulo>  (Ajustar estructura)         ║
-    ║     2. npm run act -- <modulo>  (Clonar recursos)            ║
+    ║   Teclea para ver autocompletado.                         ║
+    ║   ESPACIO ESPACIO muestra sugerencias.                    ║
+    ║   ↑↓ navega, ENTER ejecuta.                               ║
+    ║   ESC limpia sugerencias, CTRL+C sale.                    ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝
 
@@ -41,3 +46,4 @@ function showWelcome() {
 }
 
 showWelcome();
+startInteractive();
