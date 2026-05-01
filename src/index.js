@@ -4,7 +4,8 @@ function showWelcome() {
 ║                    OPENMIX - ASISTENTE CLI                ║
 ╠═══════════════════════════════════════════════════════════╣
 ║                                                           ║
-║  Sistema de validación de estructura de carpetas          ║
+║           Sistema de validación de estructura de          ║
+║           estructura correcta de carpetas                 ║
 ║                                                           ║
 ║  Comandos disponibles:                                    ║
 ║    • npm run validate           - Modo interactivo        ║

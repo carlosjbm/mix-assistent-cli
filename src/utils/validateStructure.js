@@ -76,8 +76,6 @@ async function main() {
   const targetPath = process.argv[2];
   const structureFilePath = process.argv[3];
 
-  showWelcome();
-
   let finalTargetPath = targetPath;
   let finalStructurePath = structureFilePath;
 
