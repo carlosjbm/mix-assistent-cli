@@ -123,6 +123,21 @@ async function main() {
       console.log("\n✗ La estructura NO coincide.\n");
     }
 
+    const aj = createInterface();
+    const ajustStructure = await askQuestion(
+      aj,
+      "Si desea ajustar diferencias escriba: y o n si no ",
+    );
+    if (ajustStructure === "y") {
+      /**Logica para el casi en que si se decida ajustar */
+      console.log("Se selecciono que si");
+    }
+    if (ajustStructure === "n") {
+      /**Logica para el caso en que no se quiera ajustar */
+      console.log("Se selecciono que no");
+    }
+    aj.close();
+
     process.exit(result.isValid ? 0 : 1);
   } catch (error) {
     console.error(`Error: ${error.message}`);
