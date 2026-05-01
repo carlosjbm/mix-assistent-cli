@@ -8,9 +8,10 @@
     "test": "jest",
     "validate": "node src/utils/validateStructure.js",
     "clone": "node src/services/cloneFiles.js",
-    "act": "node src/utils/actZun.js"
+    "act": "node src/utils/actZun.js",
+    "fix": "node src/services/fixFolderEspecific.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "carlosjbm",
   "license": "MIT"
 }
