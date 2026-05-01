@@ -1,0 +1,14 @@
+{
+  "name": "openmix",
+  "version": "1.0.0",
+  "description": "Asistente CLI para la automatizacion de procesos repetitivos",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "validate": "node src/utils/validateStructure.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
