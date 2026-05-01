@@ -4,7 +4,7 @@
   "description": "Asistente CLI para la automatizacion de procesos repetitivos",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "openmix": "node src/index.js",
     "test": "jest",
     "validate": "node src/utils/validateStructure.js"
   },
