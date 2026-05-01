@@ -46,9 +46,11 @@ npm start
 opentest/
 ├── src/
 │   ├── index.js           # Punto de entrada
-│   └── utils/
-│       ├── validateStructure.js   # Valida la estructura de carpetas
-│       └── adjustStructure.js     # Crea carpetas/archivos faltantes
+│   ├── utils/
+│   │   ├── validateStructure.js   # Valida la estructura de carpetas
+│   │   └── adjustStructure.js     # Crea carpetas/archivos faltantes
+│   └── services/
+│       └── cloneFiles.js  # Clona archivos y directorios
 ├── structure.md           # Archivo con la estructura esperada
 ├── package.json
 └── README.md
@@ -59,6 +61,7 @@ opentest/
 El archivo `structure.md` define la estructura de carpetas esperada. Cada línea representa una carpeta (debe terminar con `/`) o un archivo.
 
 Ejemplo:
+
 ```
 src/
 src/utils/
@@ -80,15 +83,31 @@ skills/
 5. Muestra las diferencias (carpetas faltantes o extras)
 6. Permite al usuario ajustar la estructura automáticamente
 
+## Clonación de Archivos y Directorios
+
+Permite copiar archivos o directorios completos a otra ubicación.
+
+```bash
+# Clonar un archivo
+npm run clone -- origen.txt destino.txt
+
+# Clonar un directorio
+npm run clone -- /ruta/origen /ruta/destino -- --directory
+```
+
+**Nota:** El sistema es compatible con rutas que usen `/` o `\` indistintamente.
+
 ## Comandos Disponibles
 
-| Comando | Descripción |
-|---------|-------------|
-| `npm start` | Muestra la pantalla de bienvenida |
-| `npm run validate` | Modo interactivo de validación |
-| `npm run validate <ruta>` | Validar carpeta específica |
-| `npm run validate <ruta> <archivo>` | Validar con archivo MD específico |
-| `npm test` | Ejecutar pruebas |
+| Comando                                        | Descripción                       |
+| ---------------------------------------------- | --------------------------------- |
+| `npm start`                                    | Muestra la pantalla de bienvenida |
+| `npm run validate`                             | Modo interactivo de validación    |
+| `npm run validate <ruta>`                      | Validar carpeta específica        |
+| `npm run validate <ruta> <archivo>`            | Validar con archivo MD específico |
+| `npm run clone <origen> <dest>`                | Clonar archivo                    |
+| `npm run clone <origen> <dest> -- --directory` | Clonar directorio                 |
+| `npm test`                                     | Ejecutar pruebas                  |
 
 ## Licencia
 
