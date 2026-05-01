@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
+const { adjustStructure } = require("./adjustStructure.js");
 
 function getDirectoryStructure(dirPath) {
   const structure = [];
@@ -97,6 +98,34 @@ async function main() {
     finalStructurePath = path.join(finalTargetPath, "structure.md");
   }
 
+  const rootStructurePath = path.join(process.cwd(), "structure.md");
+  const needsToAsk = !fs.existsSync(finalStructurePath);
+
+  if (needsToAsk) {
+    console.log(`\n No se encontró structure.md en: ${finalTargetPath}`);
+    const rl = createInterface();
+    const respuesta = await askQuestion(
+      rl,
+      "¿Desea crear la estructura del proyecto usando el template de la raíz? (y/n): ",
+    );
+    rl.close();
+
+    if (respuesta === "y") {
+      if (!fs.existsSync(rootStructurePath)) {
+        console.error(
+          `Error: No existe structure.md en la raíz del proyecto: ${rootStructurePath}`,
+        );
+        process.exit(1);
+      }
+      const content = fs.readFileSync(rootStructurePath, "utf-8");
+      fs.writeFileSync(finalStructurePath, content);
+      console.log(`\n✓ Copiado structure.md a: ${finalTargetPath}`);
+    } else {
+      console.log("\nOperación cancelada.\n");
+      process.exit(1);
+    }
+  }
+
   try {
     const result = validateStructure(finalTargetPath, finalStructurePath);
 
@@ -128,15 +157,21 @@ async function main() {
       aj,
       "Si desea ajustar diferencias escriba: y o n si no ",
     );
-    if (ajustStructure === "y") {
-      /**Logica para el casi en que si se decida ajustar */
-      console.log("Se selecciono que si");
-    }
-    if (ajustStructure === "n") {
-      /**Logica para el caso en que no se quiera ajustar */
-      console.log("Se selecciono que no");
-    }
     aj.close();
+
+    if (ajustStructure === "y") {
+      console.log("\nAjustando estructura...\n");
+      try {
+        adjustStructure(finalTargetPath, finalStructurePath);
+        console.log("\n✓ Estructura ajustada correctamente.\n");
+      } catch (error) {
+        console.error(`Error al ajustar: ${error.message}`);
+      }
+    } else if (ajustStructure === "n") {
+      console.log("\nOk, no se realizarán cambios.\n");
+    } else {
+      console.log("\nOpción no válida. No se realizarán cambios.\n");
+    }
 
     process.exit(result.isValid ? 0 : 1);
   } catch (error) {
