@@ -5,7 +5,7 @@ const { validateStructure } = require("./validateStructure");
 
 const accPath = "C:/Users/Carlinhos/Desktop/GET/ZunAcc";
 
-const actResources = "C:/Users/Carlinhos/Desktop/carpeta_prueba";
+const actResources = "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunAcc";
 
 const structureFilePath = path.join(process.cwd(), "acc_folder_structure.md");
 
