@@ -4,7 +4,7 @@ const readline = require("readline");
 const { adjustStructure } = require("./adjustStructure.js");
 
 //Ruta de instalacion por defecto
-const defaultInstallationPath = "C:/Users/Carlinhos/Desktop/GET";
+const defaultInstallationPath = "C:/Program Files (x86)/GET/Zun Software";
 
 const styles = {
   reset: "\x1b[0m",
@@ -126,7 +126,8 @@ async function main() {
     finalStructurePath = path.join(process.cwd(), "structure.md");
   } else if (targetPath) {
     finalTargetPath = targetPath;
-    finalStructurePath = structureFilePath || path.join(targetPath, "structure.md");
+    finalStructurePath =
+      structureFilePath || path.join(targetPath, "structure.md");
   } else {
     const rl = createInterface();
     finalTargetPath = await askQuestion(
@@ -173,7 +174,9 @@ async function main() {
     const result = validateStructure(finalTargetPath, finalStructurePath);
 
     printHeader("Estructura de Carpetas");
-    console.log(`${styles.blue}Ruta validada: ${finalTargetPath}${styles.reset}\n`);
+    console.log(
+      `${styles.blue}Ruta validada: ${finalTargetPath}${styles.reset}\n`,
+    );
     console.log(`${styles.bold}Esperada:${styles.reset}`);
     result.expected.forEach((item) => printSuccess(item));
 

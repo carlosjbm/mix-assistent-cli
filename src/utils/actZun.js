@@ -4,19 +4,19 @@ const { validateStructure } = require("./validateStructure");
 
 const modules = {
   acc: {
-    destPath: "C:/Users/Carlinhos/Desktop/GET/ZunAcc",
+    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunAcc",
     sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunAcc",
     structureFile: "acc_folder_structure.md",
   },
   pms: {
-    destPath: "C:/Users/Carlinhos/Desktop/GET/ZunPms",
+    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunPms",
     sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunPms",
     structureFile: "pms_folder_structure.md",
   },
-  sma: {
-    destPath: "C:/Users/Carlinhos/Desktop/GET/ZunSma",
-    sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunSma",
-    structureFile: "sma_folder_structure.md",
+  st: {
+    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunStock",
+    sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunStock",
+    structureFile: "st_folder_structure.md",
   },
 };
 
@@ -57,7 +57,9 @@ const updateModule = (moduleKey) => {
   if (!module) {
     printError(`Módulo no reconocido: ${moduleKey}`);
     console.log(`${styles.dim}Módulos disponibles:${styles.reset}`);
-    Object.keys(modules).forEach((key) => console.log(`  ${styles.blue}→ ${key}${styles.reset}`));
+    Object.keys(modules).forEach((key) =>
+      console.log(`  ${styles.blue}→ ${key}${styles.reset}`),
+    );
     return;
   }
 

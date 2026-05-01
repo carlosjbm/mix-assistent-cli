@@ -3,16 +3,16 @@ const path = require("path");
 
 const folders = {
   acc: {
-    path: "C:/Users/Carlinhos/Desktop/GET/ZunAcc",
+    path: "C:/Program Files (x86)/GET/Zun Software/ZunAcc",
     structureFile: "acc_folder_structure.md",
   },
   pms: {
-    path: "C:/Users/Carlinhos/Desktop/GET/ZunPms",
+    path: "C:/Program Files (x86)/GET/Zun Software/ZunPms",
     structureFile: "pms_folder_structure.md",
   },
-  sma: {
-    path: "C:/Users/Carlinhos/Desktop/GET/ZunSma",
-    structureFile: "sma_folder_structure.md",
+  st: {
+    path: "C:/Program Files (x86)/GET/Zun Software/ZunStock",
+    structureFile: "st_folder_structure.md",
   },
 };
 
@@ -56,7 +56,9 @@ const fixFolder = () => {
     printHeader("FIX - Ajuste de Estructura");
     console.log(`${styles.bold}Uso:${styles.reset} npm run fix -- <modulo>`);
     console.log(`${styles.dim}Módulos disponibles:${styles.reset}`);
-    Object.keys(folders).forEach((key) => console.log(`  ${styles.blue}→ ${key}${styles.reset}`));
+    Object.keys(folders).forEach((key) =>
+      console.log(`  ${styles.blue}→ ${key}${styles.reset}`),
+    );
     console.log();
     return;
   }
@@ -64,7 +66,9 @@ const fixFolder = () => {
   if (!module) {
     printError(`Módulo no reconocido: ${arg}`);
     console.log(`${styles.dim}Módulos disponibles:${styles.reset}`);
-    Object.keys(folders).forEach((key) => console.log(`  ${styles.blue}→ ${key}${styles.reset}`));
+    Object.keys(folders).forEach((key) =>
+      console.log(`  ${styles.blue}→ ${key}${styles.reset}`),
+    );
     return;
   }
 
