@@ -14,7 +14,7 @@ function showWelcome() {
     ║                                                           ║
     ║   El sistema comparará la estructura contra               ║
     ║   un archivo 'structure.md' en la carpeta objetivo.       ║
-    ║   Compatible con rutas usando / o \\                      ║
+    ║   Compatible con rutas usando / o                         ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝
 

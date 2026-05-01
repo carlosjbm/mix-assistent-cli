@@ -3,7 +3,11 @@ const path = require("path");
 
 function normalizePath(inputPath) {
   if (!inputPath) return inputPath;
-  return path.normalize(inputPath.replace(/[\\\/]+/g, path.sep));
+  let normalized = inputPath.trim();
+  if (process.platform === "win32") {
+    normalized = normalized.replace(/\//g, "\\");
+  }
+  return path.normalize(normalized);
 }
 
 function cloneFile(sourcePath, destPath) {
