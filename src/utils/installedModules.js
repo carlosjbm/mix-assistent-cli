@@ -69,21 +69,24 @@ function showInstalledModules() {
     return;
   }
 
-  console.log(`${styles.bold}┌${"─".repeat(58)}┐${styles.reset}`);
+  const col1Width = 30;
+  const col2Width = 19;
+
+  console.log(`${styles.blue}┌${"─".repeat(col1Width + col2Width + 2)}┐${styles.reset}`);
   console.log(
-    `${styles.bold}│${styles.reset} ${styles.blue}Módulo${styles.reset.padEnd(25)} ${styles.yellow}Última Modificación${styles.reset.padEnd(20)} ${styles.green}Estado${styles.reset}`,
+    `${styles.blue}│${styles.reset} ${styles.bold}Módulo${styles.reset.padEnd(col1Width - 1)}${styles.bold}Última Modificación${styles.reset}`,
   );
-  console.log(`${styles.bold}├${"─".repeat(58)}┤${styles.reset}`);
+  console.log(`${styles.blue}├${"─".repeat(col1Width + col2Width + 2)}┤${styles.reset}`);
 
   modules.forEach((mod) => {
-    const name = mod.name.padEnd(25);
-    const date = formatDate(mod.lastModified).padEnd(20);
+    const name = mod.name.padEnd(col1Width - 1);
+    const date = formatDate(mod.lastModified);
     console.log(
-      `${styles.bold}│${styles.reset} ${styles.green}${name}${styles.reset} ${styles.dim}${date}${styles.reset} ${styles.green}✓ Instalado${styles.reset}`,
+      `${styles.blue}│${styles.reset} ${styles.green}${name}${styles.reset} ${styles.dim}${date}${styles.reset}`,
     );
   });
 
-  console.log(`${styles.bold}└${"─".repeat(58)}┘${styles.reset}`);
+  console.log(`${styles.blue}└${"─".repeat(col1Width + col2Width + 2)}┘${styles.reset}`);
 
   console.log(`\n${styles.blue}Total: ${modules.length} módulo(s) encontrado(s).${styles.reset}\n`);
 }
