@@ -4,9 +4,10 @@
   "description": "Asistente CLI para la automatizacion de procesos repetitivos",
   "main": "src/index.js",
   "scripts": {
-    "openmix": "node src/index.js",
+    "start": "node src/index.js",
     "test": "jest",
-    "validate": "node src/utils/validateStructure.js"
+    "validate": "node src/utils/validateStructure.js",
+    "clone": "node src/services/cloneFiles.js"
   },
   "keywords": [],
   "author": "",
