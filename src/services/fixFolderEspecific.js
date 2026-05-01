@@ -2,7 +2,18 @@ const { adjustStructure } = require("../utils/adjustStructure");
 const path = require("path");
 
 const folders = {
-  acc: "C:/Users/Carlinhos/Desktop/GET/ZunAcc",
+  acc: {
+    path: "C:/Users/Carlinhos/Desktop/GET/ZunAcc",
+    structureFile: "acc_folder_structure.md",
+  },
+  pms: {
+    path: "C:/Users/Carlinhos/Desktop/GET/ZunPms",
+    structureFile: "pms_folder_structure.md",
+  },
+  sma: {
+    path: "C:/Users/Carlinhos/Desktop/GET/ZunSma",
+    structureFile: "sma_folder_structure.md",
+  },
 };
 
 const styles = {
@@ -39,7 +50,7 @@ function printInfo(msg) {
 
 const fixFolder = () => {
   const arg = process.argv[2];
-  const folderPath = folders[arg];
+  const module = folders[arg];
 
   if (!arg) {
     printHeader("FIX - Ajuste de Estructura");
@@ -50,23 +61,22 @@ const fixFolder = () => {
     return;
   }
 
-  if (!folderPath) {
+  if (!module) {
     printError(`Módulo no reconocido: ${arg}`);
     console.log(`${styles.dim}Módulos disponibles:${styles.reset}`);
     Object.keys(folders).forEach((key) => console.log(`  ${styles.blue}→ ${key}${styles.reset}`));
     return;
   }
 
-  const structureFile = arg + "_folder_structure.md";
-  const structureFilePath = path.join(process.cwd(), structureFile);
+  const structureFilePath = path.join(process.cwd(), module.structureFile);
 
   printHeader("FIX - Ajuste de Estructura");
-  printSuccess(`Módulo: ${arg}`);
-  console.log(`${styles.dim}Ruta: ${folderPath}${styles.reset}\n`);
+  printSuccess(`Módulo: ${arg.toUpperCase()}`);
+  console.log(`${styles.dim}Ruta: ${module.path}${styles.reset}\n`);
 
   printInfo("Ajustando estructura...");
   try {
-    adjustStructure(folderPath, structureFilePath);
+    adjustStructure(module.path, structureFilePath);
     printSuccess("Estructura ajustada correctamente.");
   } catch (error) {
     printError(`Error al ajustar: ${error.message}`);

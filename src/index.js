@@ -10,21 +10,27 @@ function showWelcome() {
     ║    VALIDAR ESTRUCTURA:                                    ║
     ║     • npm run validate           - Modo interactivo       ║
     ║     • npm run validate <ruta>    - Validar específica     ║
-    ║  • npm run validate -- i     - Validar ruta por defecto   ║
+    ║     • npm run validate -- i     - Validar ruta por defecto ║
     ║                                                           ║
     ║      AJUSTAR ESTRUCTURA:                                  ║
     ║     • npm run fix -- <modulo>   - Ajustar estructura      ║
-    ║       (> npm run fix -- acc)                              ║
+    ║       (acc, pms, sma)                                  ║
     ║                                                           ║
     ║    CLONAR ARCHIVOS:                                       ║
-    ║     • npm run clone <origen> <dest> --directory           ║
+    ║     • npm run clone <origen> <dest> --directory          ║
     ║                                                           ║
     ║        ACTUALIZAR ZUN:                                    ║
-    ║     • npm run act -- acc     - Valida y actualiza ZUN     ║
+    ║     • npm run act -- <modulo>   - Valida y actualiza       ║
+    ║       (acc, pms, sma)                                  ║
     ║                                                           ║
-    ║   Pasos para actualizar ZUN:                              ║
-    ║     1. npm run fix -- acc     (Ajustar estructura)        ║
-    ║     2. npm run act -- acc     (Clonar recursos)           ║
+    ║   Módulos ZUN disponibles:                             ║
+    ║     • acc  - ZunAccess                               ║
+    ║     • pms  - ZunPMS                                 ║
+    ║     • sma  - ZunSMA                                 ║
+    ║                                                           ║
+    ║   Flujo de actualización:                            ║
+    ║     1. npm run fix -- <modulo>  (Ajustar estructura)         ║
+    ║     2. npm run act -- <modulo>  (Clonar recursos)            ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝
 
