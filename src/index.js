@@ -13,7 +13,7 @@ function showWelcome() {
     ╔═══════════════════════════════════════════════════════════╗
     ║                                                           ║
     ║   OpenMix CLI - Asistente de Automatización v1.0.0        ║
-    ║ ********************************************************* ║
+    ║ ========================================================= ║
     ║   Escribe un comando o usa los atajos:                    ║
     ║                                                           ║
     ║    VALIDAR ESTRUCTURA:                                    ║
@@ -32,19 +32,19 @@ function showWelcome() {
     ║     • act -- <modulo>   - Valida y actualiza              ║
     ║       (acc, pms, sma)                                     ║
     ║                                                           ║
-║    MÓDULOS INSTALADOS:                                    ║
-     ║     • installed       - Ver módulos instalados            ║
-     ║     • adjust         - Crear carpetas faltantes           ║
-     ║                                                           ║
-     ║    INFORMACIÓN DE VERSIÓN:                               ║
-     ║     • versioninfo <ruta> - Ver versión de exe             ║
-     ║     • versioninfo --acc  - Ver versión ZunAcc             ║
-     ║     • versioninfo --pms  - Ver versión ZunPms            ║
-     ║     • versioninfo --st   - Ver versión ZunStock           ║
-     ║                                                           ║
+    ║    MÓDULOS INSTALADOS:                                    ║
+    ║     • installed       - Ver módulos instalados            ║
+    ║     • adjust         - Crear carpetas faltantes           ║
+    ║ ********************************************************* ║
+    ║    INFORMACIÓN DE VERSIÓN:                                ║
+    ║     • openmix-versioninfo <ruta> - Ver versión de exe     ║
+    ║     • openmix-versioninfo --acc  - Ver versión ZunAc      ║
+    ║     • openmix-versioninfo --pms  - Ver versión ZunPms     ║
+    ║     • openmix-versioninfo --st   - Ver versión ZunStock   ║
+    ║***********************************************************║
     ║   Teclea para ver autocompletado.                         ║
     ║   ESPACIO ESPACIO muestra sugerencias.                    ║
-    ║   ↑↓ navega, ENTER ejecuta.                               ║
+    ║                                                           ║
     ║   ESC limpia sugerencias, CTRL+C sale.                    ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝

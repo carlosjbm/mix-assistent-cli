@@ -1,37 +1,62 @@
-# OPENMIX
+# OPENMIX-ZUN
 
-Asistente CLI para la automatización de procesos repetitivos.
+Asistente CLI para la automatización de procesos repetitivos en entornos ZUN.
 
 ## Descripción
 
-Openmix es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN automáticamente.
+Openmix-zun es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN y obtener información de versión de ejecutables Windows.
 
 ## Requisitos
 
 - Node.js v12 o superior
 - NPM
+- Windows (para funcionalidades de versioninfo)
 
 ## Instalación
 
 ```bash
-npm install
+npm install -g openmix-zun
+# O desde el repositorio local
+npm link
 ```
 
 ## Uso
+
+### Modo Interactivo
+
+```bash
+openmix
+```
+
+Inicia el modo interactivo donde puedes escribir comandos con autocompletado.
+
+### Información de Versión de Ejecutables
+
+Muestra la información de versión de un ejecutable Windows usando la librería `win-version-info`.
+
+```bash
+# Ver información de un ejecutable específico
+openmix-versioninfo "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"
+
+# Usar flags predefinidas para módulos ZUN
+openmix-versioninfo --acc    # ZunAcc
+openmix-versioninfo --pms    # ZunPms
+openmix-versioninfo --st     # ZunStock
+```
 
 ### Validación de Estructura
 
 Valida que la estructura de carpetas de un proyecto coincida con el patrón definido en `structure.md`.
 
 ```bash
-# Modo interactivo - el sistema te pedirá la ruta
-npm run validate
+# Modo interactivo - el sistema tepedirá la ruta
+openmix-validate
 
 # Validar una ruta específica
-npm run validate /ruta/del/proyecto
+openmix-validate /ruta/del/proyecto
 
 # Validar ruta por defecto (definida en el código)
-npm run validate -- i
+openmix-validate -- i
 ```
 
 ### Ajuste de Estructura
@@ -40,7 +65,9 @@ Ajusta la estructura de carpetas automáticamente creando las carpetas faltantes
 
 ```bash
 # Ajustar estructura de un módulo específico
-npm run fix -- acc
+openmix-fix -- acc
+openmix-fix -- pms
+openmix-fix -- st
 ```
 
 ### Actualización de ZUN
@@ -49,34 +76,48 @@ Actualiza los recursos de ZUN validando primero la estructura y luego clonando l
 
 ```bash
 # Validar estructura y clonar recursos
-npm run act -- acc
+openmix-act -- acc
+openmix-act -- pms
+openmix-act -- st
 ```
 
-### Verificar estructura desde la raíz del proyecto
+### Verificar Módulos Instalados
+
+Muestra los módulos ZUN instalados en el sistema.
 
 ```bash
-npm start
+openmix-installed
 ```
 
-## Estructura del Proyecto
+### Clonación de Archivos y Directorios
 
+Permite copiar archivos o directorios completos a otra ubicación.
+
+```bash
+# Clonar un archivo
+openmix-clone origen.txt destino.txt
+
+# Clonar un directorio
+openmix-clone /ruta/origen /ruta/destino --directory
 ```
-opentest/
-├── src/
-│   ├── index.js                # Punto de entrada
-│   ├── utils/
-│   │   ├── validateStructure.js   # Valida la estructura de carpetas
-│   │   ├── adjustStructure.js     # Crea carpetas/archivos faltantes
-│   │   ├── actZun.js             # Actualiza recursos ZUN
-│   │   └── fixFolderEspecific.js   # Ajusta estructura por módulos
-│   └── services/
-│       ├── cloneFiles.js         # Clona archivos y directorios
-│       └── fixFolderEspecific.js # Define rutas de módulos
-├── structure.md               # Archivo con la estructura esperada
-├── acc_folder_structure.md    # Estructura específica para ZUN
-├── package.json
-└── README.md
-```
+
+## Comandos Disponibles
+
+| Comando                          | Descripción                          |
+| -------------------------------- | ------------------------------------ |
+| `openmix`                        | Modo interactivo con autocompletado   |
+| `openmix-versioninfo <ruta>`      | Ver información de versión de exe  |
+| `openmix-versioninfo --acc`     | Ver versión de ZunAcc               |
+| `openmix-versioninfo --pms`     | Ver versión de ZunPms               |
+| `openmix-versioninfo --st`       | Ver versión de ZunStock            |
+| `openmix-validate`              | Modo interactivo de validación      |
+| `openmix-validate <ruta>`      | Validar carpeta específica           |
+| `openmix-validate -- i`         | Validar ruta por defecto            |
+| `openmix-fix -- <modulo>`        | Ajustar estructura (acc, pms, st)  |
+| `openmix-act -- <modulo>`        | Actualizar ZUN (acc, pms, st)      |
+| `openmix-clone <origen> <dest>`  | Clonar archivo                      |
+| `openmix-clone <origen> <dest> --directory` | Clonar directorio            |
+| `openmix-installed`             | Ver módulos ZUN instalados         |
 
 ## Archivo structure.md
 
@@ -95,49 +136,6 @@ config/
 dist/
 skills/
 ```
-
-## Flujo de Trabajo
-
-### Validación
-1. El usuario ejecuta `npm run validate`
-2. El sistema solicita la ruta de la carpeta a validar
-3. Si no existe `structure.md` en la ruta, pregunta si desea copiar el template de la raíz
-4. El sistema compara la estructura actual con la esperada
-5. Muestra las diferencias (carpetas faltantes o extras)
-6. Permite al usuario ajustar la estructura automáticamente
-
-### Actualización de ZUN
-1. Ejecutar `npm run fix -- acc` para ajustar la estructura
-2. Ejecutar `npm run act -- acc` para clonar los recursos
-3. El sistema valida la estructura antes de clonar
-
-## Clonación de Archivos y Directorios
-
-Permite copiar archivos o directorios completos a otra ubicación.
-
-```bash
-# Clonar un archivo
-npm run clone -- origen.txt destino.txt
-
-# Clonar un directorio
-npm run clone -- /ruta/origen /ruta/destino --directory
-```
-
-**Nota:** El sistema es compatible con rutas que usen `/` o `\` indistintamente.
-
-## Comandos Disponibles
-
-| Comando                                        | Descripción                          |
-| ---------------------------------------------- | ------------------------------------ |
-| `npm start`                                    | Muestra la pantalla de bienvenida    |
-| `npm run validate`                             | Modo interactivo de validación      |
-| `npm run validate <ruta>`                      | Validar carpeta específica          |
-| `npm run validate -- i`                         | Validar ruta por defecto             |
-| `npm run fix -- <modulo>`                       | Ajustar estructura (ej: acc)       |
-| `npm run act -- acc`                           | Actualizar ZUN                      |
-| `npm run clone <origen> <dest>`                | Clonar archivo                      |
-| `npm run clone <origen> <dest> -- --directory` | Clonar directorio                  |
-| `npm test`                                     | Ejecutar pruebas                    |
 
 ## Licencia
 

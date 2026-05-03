@@ -1,7 +1,7 @@
 {
-  "name": "openmix",
+  "name": "openmix-zun",
   "version": "1.0.0",
-  "description": "Asistente CLI para la automatizacion de procesos repetitivos",
+  "description": "Asistente CLI para la automatización de procesos repetitivos del soporte a la SUITE ZUN",
   "main": "src/index.js",
   "bin": {
     "openmix": "src/index.js",
@@ -21,8 +21,12 @@
     "fix": "node src/services/fixFolderEspecific.js",
     "installed": "node src/utils/installedModules.js"
   },
-  "keywords": [],
-  "author": "carlosjbm",
+  "keywords": [
+    "ZUN",
+    "zun-cli",
+    "Asistente CLI"
+  ],
+  "author": "carlinhos",
   "license": "MIT",
   "dependencies": {
     "keypress": "^0.2.1",
