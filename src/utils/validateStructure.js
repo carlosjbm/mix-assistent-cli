@@ -1,9 +1,9 @@
+#! /usr/bin/env node
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 const { adjustStructure } = require("./adjustStructure.js");
 
-//Ruta de instalacion por defecto
 const defaultInstallationPath = "C:/Program Files (x86)/GET/Zun Software";
 
 const styles = {
@@ -14,6 +14,7 @@ const styles = {
   blue: "\x1b[34m",
   bold: "\x1b[1m",
   dim: "\x1b[2m",
+  cyan: "\x1b[36m",
 };
 
 function printHeader(title) {
@@ -40,6 +41,40 @@ function printInfo(msg) {
 
 function printDim(msg) {
   console.log(`${styles.dim}${msg}${styles.reset}`);
+}
+
+function formatTreeAsList(structure) {
+  const tree = {};
+  const result = [];
+
+  for (const item of structure) {
+    const parts = item.replace(/\/$/, "").split("/");
+    let current = tree;
+    for (const part of parts) {
+      if (!current[part]) {
+        current[part] = {};
+      }
+      current = current[part];
+    }
+  }
+
+  function traverse(obj, prefix = "", isLast = true, resultList = []) {
+    const keys = Object.keys(obj).sort();
+    keys.forEach((key, index) => {
+      const isLastKey = index === keys.length - 1;
+      const connector = isLastKey ? "└── " : "├── ";
+      const branch = isLast ? "    " : "│   ";
+
+      resultList.push(prefix + connector + styles.cyan + key + styles.reset);
+
+      if (Object.keys(obj[key]).length > 0) {
+        traverse(obj[key], prefix + branch, isLastKey, resultList);
+      }
+    });
+  }
+
+  traverse(tree, "", true, result);
+  return result;
 }
 
 function getDirectoryStructure(dirPath) {
@@ -172,16 +207,18 @@ async function main() {
 
   try {
     const result = validateStructure(finalTargetPath, finalStructurePath);
+    const expectedTree = formatTreeAsList(result.expected);
+    const actualTree = formatTreeAsList(result.actual);
 
     printHeader("Estructura de Carpetas");
     console.log(
       `${styles.blue}Ruta validada: ${finalTargetPath}${styles.reset}\n`,
     );
     console.log(`${styles.bold}Esperada:${styles.reset}`);
-    result.expected.forEach((item) => printSuccess(item));
+    expectedTree.forEach((item) => printSuccess(item));
 
     console.log(`\n${styles.bold}Actual:${styles.reset}`);
-    result.actual.forEach((item) => console.log(`  ${item}`));
+    actualTree.forEach((item) => printDim(item));
 
     if (result.isValid) {
       printSuccess("La estructura coincide con lo esperado!");
@@ -235,4 +272,5 @@ module.exports = {
   validateStructure,
   getDirectoryStructure,
   loadExpectedStructure,
+  formatTreeAsList,
 };

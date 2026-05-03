@@ -54,6 +54,26 @@ const commands = [
     description: "Crear carpetas faltantes en la estructura",
     usage: "npm run adjust",
   },
+  {
+    name: "versioninfo <ruta>",
+    description: "Ver información de versión de un ejecutable",
+    usage: "openmix-versioninfo \"C:/ruta/al/ejecutable.exe\"",
+  },
+  {
+    name: "versioninfo --acc",
+    description: "Ver versión de ZunAcc (Proton VPN)",
+    usage: "openmix-versioninfo --acc",
+  },
+  {
+    name: "versioninfo --pms",
+    description: "Ver versión de ZunPms (Proton VPN)",
+    usage: "openmix-versioninfo --pms",
+  },
+  {
+    name: "versioninfo --st",
+    description: "Ver versión de ZunStock (Proton VPN)",
+    usage: "openmix-versioninfo --st",
+  },
 ];
 
 function getCommands() {

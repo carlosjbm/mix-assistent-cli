@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const { adjustStructure } = require("../utils/adjustStructure");
 const path = require("path");
 

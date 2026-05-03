@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const { startInteractive } = require("./services/interactiveCLI");
 
 function showWelcome() {
@@ -31,10 +32,16 @@ function showWelcome() {
     ║     • act -- <modulo>   - Valida y actualiza              ║
     ║       (acc, pms, sma)                                     ║
     ║                                                           ║
-    ║    MÓDULOS INSTALADOS:                                    ║
-    ║     • installed       - Ver módulos instalados            ║
-    ║     • adjust         - Crear carpetas faltantes           ║
-    ║                                                           ║
+║    MÓDULOS INSTALADOS:                                    ║
+     ║     • installed       - Ver módulos instalados            ║
+     ║     • adjust         - Crear carpetas faltantes           ║
+     ║                                                           ║
+     ║    INFORMACIÓN DE VERSIÓN:                               ║
+     ║     • versioninfo <ruta> - Ver versión de exe             ║
+     ║     • versioninfo --acc  - Ver versión ZunAcc             ║
+     ║     • versioninfo --pms  - Ver versión ZunPms            ║
+     ║     • versioninfo --st   - Ver versión ZunStock           ║
+     ║                                                           ║
     ║   Teclea para ver autocompletado.                         ║
     ║   ESPACIO ESPACIO muestra sugerencias.                    ║
     ║   ↑↓ navega, ENTER ejecuta.                               ║

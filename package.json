@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Asistente CLI para la automatizacion de procesos repetitivos",
   "main": "src/index.js",
+  "bin": {
+    "openmix": "src/index.js",
+    "openmix-validate": "src/utils/validateStructure.js",
+    "openmix-clone": "src/services/cloneFiles.js",
+    "openmix-act": "src/utils/actZun.js",
+    "openmix-fix": "src/services/fixFolderEspecific.js",
+    "openmix-installed": "src/utils/installedModules.js",
+    "openmix-versioninfo": "src/utils/versionInfo.js"
+  },
   "scripts": {
     "start": "node src/index.js",
     "test": "jest",
@@ -16,6 +25,7 @@
   "author": "carlosjbm",
   "license": "MIT",
   "dependencies": {
-    "keypress": "^0.2.1"
+    "keypress": "^0.2.1",
+    "win-version-info": "^6.0.1"
   }
 }

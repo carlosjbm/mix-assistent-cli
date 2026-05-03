@@ -28,7 +28,9 @@ function render() {
     suggestions.forEach((cmd, index) => {
       const prefix = index === selectedIndex ? "  ▸ " : "    ";
       const highlight = index === selectedIndex ? styles.cyan : styles.dim;
-      console.log(`${prefix}${highlight}${cmd.name}${styles.reset}  ${styles.dim}${cmd.description}${styles.reset}`);
+      console.log(
+        `${prefix}${highlight}${cmd.name}${styles.reset}  ${styles.dim}${cmd.description}${styles.reset}`,
+      );
     });
   }
 
@@ -75,6 +77,16 @@ function executeCommand(command) {
       execSync("npm run installed", { stdio: "inherit" });
     } else if (cmd === "adjust") {
       let fullCmd = "node src/utils/adjustStructure.js";
+      if (script) fullCmd += ` ${script}`;
+      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      execSync(fullCmd, { stdio: "inherit" });
+    } else if (cmd === "versioninfo") {
+      let fullCmd = "openmix-versioninfo";
+      if (script) fullCmd += ` "${script}"`;
+      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      execSync(fullCmd, { stdio: "inherit", shell: true });
+    } else if (cmd === "versioninfo acc") {
+      let fullCmd = "openmix-versioninfo --acc";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
@@ -158,7 +170,8 @@ function startInteractive() {
 
     if (key.name === "up") {
       if (showSuggestions && suggestions.length > 0) {
-        selectedIndex = (selectedIndex - 1 + suggestions.length) % suggestions.length;
+        selectedIndex =
+          (selectedIndex - 1 + suggestions.length) % suggestions.length;
         render();
       }
       return;
@@ -183,7 +196,13 @@ function startInteractive() {
       return;
     }
 
-    if (ch && ch.length === 1 && !key.ctrl && !key.meta && key.name !== "space") {
+    if (
+      ch &&
+      ch.length === 1 &&
+      !key.ctrl &&
+      !key.meta &&
+      key.name !== "space"
+    ) {
       if (ch.charCodeAt(0) >= 32) {
         currentInput += ch;
         showSuggestions = false;
