@@ -34,7 +34,7 @@ function showWelcome() {
     ║                                                           ║
     ║    MÓDULOS INSTALADOS:                                    ║
     ║     • installed       - Ver módulos instalados            ║
-    ║     • adjust         - Crear carpetas faltantes           ║
+    ║                                                           ║
     ║ ********************************************************* ║
     ║    INFORMACIÓN DE VERSIÓN:                                ║
     ║     • openmix-versioninfo <ruta> - Ver versión de exe     ║
