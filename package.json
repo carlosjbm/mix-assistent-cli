@@ -4,6 +4,7 @@
   "description": "Asistente CLI para la automatización de procesos repetitivos del soporte a la SUITE ZUN",
   "main": "src/index.js",
   "bin": {
+    "openmix": "src/index.js",
     "openmix-validate": "src/utils/validateStructure.js",
     "openmix-clone": "src/services/cloneFiles.js",
     "openmix-act": "src/utils/actZun.js",
