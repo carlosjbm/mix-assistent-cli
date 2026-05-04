@@ -52,12 +52,12 @@ function executeCommand(command) {
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "fix") {
-      let fullCmd = "openmix-fix --";
+      let fullCmd = "openmix-fix ";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "act") {
-      let fullCmd = "openmix-act --";
+      let fullCmd = "openmix-act ";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
