@@ -47,22 +47,22 @@ function executeCommand(command) {
 
   try {
     if (cmd === "validate") {
-      let fullCmd = "npm run validate";
+      let fullCmd = "openmix-validate";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "fix") {
-      let fullCmd = "npm run fix --";
+      let fullCmd = "openmix-fix --";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "act") {
-      let fullCmd = "npm run act --";
+      let fullCmd = "openmix-act --";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "clone") {
-      let fullCmd = "npm run clone";
+      let fullCmd = "openmix-clone";
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
@@ -74,7 +74,7 @@ function executeCommand(command) {
       execSync("npm test", { stdio: "inherit" });
     } else if (cmd === "installed") {
       console.log(`${styles.cyan}$ npm run installed${styles.reset}\n`);
-      execSync("npm run installed", { stdio: "inherit" });
+      execSync("openmix-installed", { stdio: "inherit" });
     } else if (cmd === "adjust") {
       let fullCmd = "node src/utils/adjustStructure.js";
       if (script) fullCmd += ` ${script}`;
