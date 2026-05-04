@@ -12,7 +12,7 @@ function showWelcome() {
 
     ╔═══════════════════════════════════════════════════════════╗
     ║                                                           ║
-    ║   OpenMix CLI - Asistente de Automatización v1.0.0        ║
+    ║   OpenMix CLI - Asistente de Automatización  v1.0         ║
     ║ ========================================================= ║
     ║   Escribe un comando o usa los atajos:                    ║
     ║                                                           ║
