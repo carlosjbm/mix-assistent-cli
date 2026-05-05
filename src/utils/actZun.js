@@ -7,17 +7,17 @@ const modules = {
   acc: {
     destPath: "C:/Program Files (x86)/GET/Zun Software/ZunAcc",
     sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunAcc",
-    structureFile: "opentest/acc_folder_structure.md",
+    structureFile: "opentest/folders_strs/acc_folder_structure.md",
   },
   pms: {
     destPath: "C:/Program Files (x86)/GET/Zun Software/ZunPms",
     sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunPms",
-    structureFile: "opentest/pms_folder_structure.md",
+    structureFile: "opentest/folders_strs/pms_folder_structure.md",
   },
   st: {
     destPath: "C:/Program Files (x86)/GET/Zun Software/ZunStock",
     sourcePath: "C:/Users/Carlinhos/Desktop/carpeta_prueba/ZunStock",
-    structureFile: "opentest/st_folder_structure.md",
+    structureFile: "opentest/folders_strs/st_folder_structure.md",
   },
 };
 

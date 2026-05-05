@@ -158,11 +158,15 @@ async function main() {
 
   if (useDefaultPath) {
     finalTargetPath = defaultInstallationPath;
-    finalStructurePath = path.join(process.cwd(), "opentest/structure.md");
+    finalStructurePath = path.join(
+      process.cwd(),
+      "opentest/folders_strs/structure.md",
+    );
   } else if (targetPath) {
     finalTargetPath = targetPath;
     finalStructurePath =
-      structureFilePath || path.join(targetPath, "opentest/structure.md");
+      structureFilePath ||
+      path.join(targetPath, "opentest/folders_strs/structure.md");
   } else {
     const rl = createInterface();
     finalTargetPath = await askQuestion(
@@ -176,10 +180,16 @@ async function main() {
       process.exit(1);
     }
 
-    finalStructurePath = path.join(finalTargetPath, "opentest/structure.md");
+    finalStructurePath = path.join(
+      finalTargetPath,
+      "opentest/folders_strs/structure.md",
+    );
   }
 
-  const rootStructurePath = path.join(process.cwd(), "opentest/structure.md");
+  const rootStructurePath = path.join(
+    process.cwd(),
+    "opentest/folders_strs/structure.md",
+  );
   const needsToAsk = !fs.existsSync(finalStructurePath);
 
   if (needsToAsk) {
