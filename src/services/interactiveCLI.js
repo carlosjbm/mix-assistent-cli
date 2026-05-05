@@ -1,3 +1,4 @@
+const path = require("path");
 const keypress = require("keypress");
 const { searchCommands, getCommands } = require("./autoComplete");
 
@@ -90,6 +91,11 @@ function executeCommand(command) {
       if (script) fullCmd += ` ${script}`;
       console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
+} else if (cmd === "help") {
+      const projectRoot = path.join(__dirname, "..", "..");
+      const fullCmd = script ? `node src/utils/help.js ${script}` : "node src/utils/help.js";
+      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      execSync(fullCmd, { stdio: "inherit", cwd: projectRoot });
     } else {
       console.log(`${styles.dim}Comando no reconocido: ${cmd}${styles.reset}`);
     }

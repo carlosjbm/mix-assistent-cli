@@ -74,6 +74,16 @@ const commands = [
     description: "Ver versión de ZunStock (Proton VPN)",
     usage: "openmix-versioninfo --st",
   },
+  {
+    name: "help",
+    description: "Mostrar ayuda de comandos",
+    usage: "help [comando]",
+  },
+  {
+    name: "help <comando>",
+    description: "Mostrar ayuda de un comando específico",
+    usage: "help validate",
+  },
 ];
 
 function getCommands() {

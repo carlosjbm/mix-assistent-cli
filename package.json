@@ -10,7 +10,8 @@
     "openmix-act": "src/utils/actZun.js",
     "openmix-fix": "src/services/fixFolderEspecific.js",
     "openmix-installed": "src/utils/installedModules.js",
-    "openmix-versioninfo": "src/utils/versionInfo.js"
+    "openmix-versioninfo": "src/utils/versionInfo.js",
+    "openmix-help": "src/utils/help.js"
   },
   "scripts": {
     "start": "node src/index.js",
@@ -19,7 +20,8 @@
     "clone": "node src/services/cloneFiles.js",
     "act": "node src/utils/actZun.js",
     "fix": "node src/services/fixFolderEspecific.js",
-    "installed": "node src/utils/installedModules.js"
+    "installed": "node src/utils/installedModules.js",
+    "help": "node src/utils/help.js"
   },
   "keywords": [
     "ZUN",
