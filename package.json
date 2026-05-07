@@ -11,7 +11,8 @@
     "openmix-fix": "src/services/fixFolderEspecific.js",
     "openmix-installed": "src/utils/installedModules.js",
     "openmix-versioninfo": "src/utils/versionInfo.js",
-    "openmix-help": "src/utils/help.js"
+    "openmix-help": "src/utils/help.js",
+    "openmix-backup": "src/utils/backupSql.js"
   },
   "scripts": {
     "start": "node src/index.js",
@@ -21,7 +22,8 @@
     "act": "node src/utils/actZun.js",
     "fix": "node src/services/fixFolderEspecific.js",
     "installed": "node src/utils/installedModules.js",
-    "help": "node src/utils/help.js"
+    "help": "node src/utils/help.js",
+    "backup": "node src/utils/backupSql.js"
   },
   "keywords": [
     "ZUN",

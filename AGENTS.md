@@ -14,6 +14,7 @@
 | `npm run act` | src/utils/actZun.js | Full ZUN update (validate + clone) |
 | `npm run clone` | src/services/cloneFiles.js | Copy files/dirs |
 | `npm run installed` | src/utils/installedModules.js | List installed ZUN modules |
+| `npm run backup` | src/utils/backupSql.js | SQL Server backup |
 | `npm run test` | jest | Run tests |
 
 ## Key Flags
@@ -22,6 +23,7 @@
 - `openmix-fix -- acc|pms|st` - fix structure for module
 - `openmix-act -- acc|pms|st` - update full ZUN module
 - `openmix-versioninfo --acc|--pms|--st` - get exe version info
+- `openmix-backup --acc|--pms|--st` - backup SQL Server database
 
 ## ZUN Modules
 - ZunAcc (acc) - Accounting
