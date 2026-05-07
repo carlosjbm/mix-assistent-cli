@@ -6,46 +6,32 @@ function showWelcome() {
     reset: "\x1b[0m",
     green: "\x1b[32m",
     blue: "\x1b[34m",
+    cyan: "\x1b[36m",
+    dim: "\x1b[2m",
   };
 
   console.log(`
 
     ╔═══════════════════════════════════════════════════════════╗
     ║                                                           ║
-    ║   OpenMix CLI - Asistente de Automatización  v1.0         ║
+    ║   OpenMix CLI - Asistente de Automatizacion              ║
     ║ ========================================================= ║
-    ║   Escribe un comando o usa los atajos:                    ║
     ║                                                           ║
-    ║    VALIDAR ESTRUCTURA:                                    ║
-    ║     • validate           - Modo interactivo               ║
-    ║     • validate <ruta>   - Validar específica              ║
-    ║     • validate -- i     - Validar ruta por defecto        ║
+    ║   Bienvenido a OpenMix!                                  ║
+    ║   Tu asistente para automatizar tareas del soporte ZUN    ║
     ║                                                           ║
-    ║      AJUSTAR ESTRUCTURA:                                  ║
-    ║     • fix -- <modulo>   - Ajustar estructura              ║
-    ║       (acc, pms, st)                                      ║
+    ║   Para ver todos los comandos disponibles:               ║
+    ║     ${styles.cyan}help${styles.reset}                                              ║
     ║                                                           ║
-    ║    CLONAR ARCHIVOS:                                       ║
-    ║     • clone <origen> <dest> --directory                   ║
-    ║                                                           ║
-    ║        ACTUALIZAR ZUN:                                    ║
-    ║     • act -- <modulo>   - Valida y actualiza              ║
-    ║       (acc, pms, sma)                                     ║
-    ║                                                           ║
-    ║    MÓDULOS INSTALADOS:                                    ║
-    ║     • installed       - Ver módulos instalados            ║
+    ║   Para ayuda especifica de un comando:                   ║
+    ║     ${styles.cyan}help <comando>${styles.reset}                                  ║
+    ║     Ejemplo: ${styles.dim}help validate${styles.reset}                          ║
     ║                                                           ║
     ║ ********************************************************* ║
-    ║    INFORMACIÓN DE VERSIÓN:                                ║
-    ║     • openmix-versioninfo <ruta> - Ver versión de exe     ║
-    ║     • openmix-versioninfo --acc  - Ver versión ZunAc      ║
-    ║     • openmix-versioninfo --pms  - Ver versión ZunPms     ║
-    ║     • openmix-versioninfo --st   - Ver versión ZunStock   ║
-    ║***********************************************************║
-    ║   Teclea para ver autocompletado.                         ║
-    ║   ESPACIO ESPACIO muestra sugerencias.                    ║
-    ║                                                           ║
-    ║   ESC limpia sugerencias, CTRL+C sale.                    ║
+    ║   Escribe un comando y presiona ENTER                    ║
+    ║   ESPACIO ESPACIO muestra sugerencias                    ║
+    ║   ESC limpia sugerencias, CTRL+C sale                    ║
+    ║ ********************************************************* ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝
 

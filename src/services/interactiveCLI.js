@@ -50,28 +50,28 @@ function executeCommand(command) {
     if (cmd === "validate") {
       let fullCmd = "openmix-validate";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "fix") {
       let fullCmd = "openmix-fix ";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "act") {
       let fullCmd = "openmix-act ";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "clone") {
       let fullCmd = "openmix-clone";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "start") {
-      console.log(`${styles.cyan}$ npm start${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ npm start${styles.reset}\n`);
       execSync("npm start", { stdio: "inherit" });
     } else if (cmd === "test") {
-      console.log(`${styles.cyan}$ npm test${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ npm test${styles.reset}\n`);
       execSync("npm test", { stdio: "inherit" });
     } else if (cmd === "installed") {
       console.log(`${styles.cyan}$ npm run installed${styles.reset}\n`);
@@ -79,22 +79,24 @@ function executeCommand(command) {
     } else if (cmd === "adjust") {
       let fullCmd = "node src/utils/adjustStructure.js";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "versioninfo") {
       let fullCmd = "openmix-versioninfo";
       if (script) fullCmd += ` "${script}"`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit", shell: true });
     } else if (cmd === "versioninfo acc") {
       let fullCmd = "openmix-versioninfo --acc";
       if (script) fullCmd += ` ${script}`;
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
-} else if (cmd === "help") {
+    } else if (cmd === "help") {
       const projectRoot = path.join(__dirname, "..", "..");
-      const fullCmd = script ? `node src/utils/help.js ${script}` : "node src/utils/help.js";
-      console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
+      const fullCmd = script
+        ? `node src/utils/help.js ${script}`
+        : "node src/utils/help.js";
+      // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit", cwd: projectRoot });
     } else {
       console.log(`${styles.dim}Comando no reconocido: ${cmd}${styles.reset}`);
