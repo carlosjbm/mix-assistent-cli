@@ -28,8 +28,14 @@
   "keywords": [
     "ZUN",
     "zun-cli",
-    "Asistente CLI"
+    "asistente",
+    "cli",
+    "automation"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlosjbm/mix-assistent-cli/"
+  },
   "author": "carlinhos",
   "license": "MIT",
   "dependencies": {

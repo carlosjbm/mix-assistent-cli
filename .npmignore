@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.opencode/
+*.log
+.env
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
