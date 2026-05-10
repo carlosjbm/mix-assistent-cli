@@ -48,8 +48,7 @@ function adjustStructure(targetPath, structureFilePath) {
 async function main() {
   const targetPath = process.argv[2];
   const structureFilePath =
-    process.argv[3] ||
-    path.join(targetPath, "opentest/folders_strs/structure.md");
+    process.argv[3] || require("../config/paths").structure.default;
 
   if (!targetPath) {
     console.error(

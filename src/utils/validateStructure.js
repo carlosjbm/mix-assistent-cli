@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 const { adjustStructure } = require("./adjustStructure.js");
+const paths = require("../config/paths");
 
 const defaultInstallationPath = "C:/Program Files (x86)/GET/Zun Software";
 
@@ -158,15 +159,11 @@ async function main() {
 
   if (useDefaultPath) {
     finalTargetPath = defaultInstallationPath;
-    finalStructurePath = path.join(
-      process.cwd(),
-      "opentest/folders_strs/structure.md",
-    );
+    finalStructurePath = paths.structure.default;
   } else if (targetPath) {
     finalTargetPath = targetPath;
     finalStructurePath =
-      structureFilePath ||
-      path.join(targetPath, "opentest/folders_strs/structure.md");
+      structureFilePath || paths.structure.default;
   } else {
     const rl = createInterface();
     finalTargetPath = await askQuestion(
@@ -186,10 +183,7 @@ async function main() {
     );
   }
 
-  const rootStructurePath = path.join(
-    process.cwd(),
-    "opentest/folders_strs/structure.md",
-  );
+  const rootStructurePath = paths.structure.default;
   const needsToAsk = !fs.existsSync(finalStructurePath);
 
   if (needsToAsk) {
