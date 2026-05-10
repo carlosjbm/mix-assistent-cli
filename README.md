@@ -74,11 +74,18 @@ openmix-fix -- st
 
 Actualiza los recursos de ZUN validando primero la estructura y luego clonando los archivos.
 
+**Pasos para actualizar un módulo:**
+
+1. **Preparar los recursos:** Crea una carpeta compartida donde estén los archivos de actualización (por ejemplo: `D:/RecursosZun/`) con una subcarpeta para cada módulo.
+2. **Realizar backup:** Ejecuta `openmix-backup -- <módulo>` para crear una copia de seguridad antes de actualizar.
+3. **Ejecutar la actualización:** Usa el comando `openmix-act -- <módulo>` para validar la estructura y clonar los archivos.
+4. **Verificar la versión:** Opcionalmente, ejecuta `openmix-versioninfo -- <módulo>` para confirmar que el ejecutable se actualizó correctamente.
+
 ```bash
-# Validar estructura y clonar recursos
-openmix-act -- acc
-openmix-act -- pms
-openmix-act -- st
+# Actualizar módulos ZUN
+openmix-act -- acc   # Accounting
+openmix-act -- pms   # Point of Sale
+openmix-act -- st    # Inventory
 ```
 
 ### Verificar Módulos Instalados
@@ -103,21 +110,21 @@ openmix-clone /ruta/origen /ruta/destino --directory
 
 ## Comandos Disponibles
 
-| Comando                          | Descripción                          |
-| -------------------------------- | ------------------------------------ |
-| `openmix`                        | Modo interactivo con autocompletado   |
-| `openmix-versioninfo <ruta>`      | Ver información de versión de exe  |
-| `openmix-versioninfo --acc`     | Ver versión de ZunAcc               |
-| `openmix-versioninfo --pms`     | Ver versión de ZunPms               |
-| `openmix-versioninfo --st`       | Ver versión de ZunStock            |
-| `openmix-validate`              | Modo interactivo de validación      |
-| `openmix-validate <ruta>`      | Validar carpeta específica           |
-| `openmix-validate -- i`         | Validar ruta por defecto            |
-| `openmix-fix -- <modulo>`        | Ajustar estructura (acc, pms, st)  |
-| `openmix-act -- <modulo>`        | Actualizar ZUN (acc, pms, st)      |
-| `openmix-clone <origen> <dest>`  | Clonar archivo                      |
-| `openmix-clone <origen> <dest> --directory` | Clonar directorio            |
-| `openmix-installed`             | Ver módulos ZUN instalados         |
+| Comando                                     | Descripción                         |
+| ------------------------------------------- | ----------------------------------- |
+| `openmix`                                   | Modo interactivo con autocompletado |
+| `openmix-versioninfo <ruta>`                | Ver información de versión de exe   |
+| `openmix-versioninfo --acc`                 | Ver versión de ZunAcc               |
+| `openmix-versioninfo --pms`                 | Ver versión de ZunPms               |
+| `openmix-versioninfo --st`                  | Ver versión de ZunStock             |
+| `openmix-validate`                          | Modo interactivo de validación      |
+| `openmix-validate <ruta>`                   | Validar carpeta específica          |
+| `openmix-validate -- i`                     | Validar ruta por defecto            |
+| `openmix-fix -- <modulo>`                   | Ajustar estructura (acc, pms, st)   |
+| `openmix-act -- <modulo>`                   | Actualizar ZUN (acc, pms, st)       |
+| `openmix-clone <origen> <dest>`             | Clonar archivo                      |
+| `openmix-clone <origen> <dest> --directory` | Clonar directorio                   |
+| `openmix-installed`                         | Ver módulos ZUN instalados          |
 
 ## Archivo structure.md
 
