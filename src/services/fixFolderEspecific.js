@@ -4,15 +4,15 @@ const path = require("path");
 
 const folders = {
   acc: {
-    path: "C:/Program Files (x86)/GET/Zun Software/ZunAcc",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
     structureFile: "opentest/folders_strs/acc_folder_structure.md",
   },
   pms: {
-    path: "C:/Program Files (x86)/GET/Zun Software/ZunPms",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms",
     structureFile: "opentest/folders_strs/pms_folder_structure.md",
   },
   st: {
-    path: "C:/Program Files (x86)/GET/Zun Software/ZunStock",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
     structureFile: "opentest/folders_strs/st_folder_structure.md",
   },
 };

@@ -113,6 +113,7 @@ openmix-clone /ruta/origen /ruta/destino --directory
 | Comando                                     | Descripción                         |
 | ------------------------------------------- | ----------------------------------- |
 | `openmix`                                   | Modo interactivo con autocompletado |
+| `openmix-version`                           | Ver versión de OpenMix              |
 | `openmix-versioninfo <ruta>`                | Ver información de versión de exe   |
 | `openmix-versioninfo --acc`                 | Ver versión de ZunAcc               |
 | `openmix-versioninfo --pms`                 | Ver versión de ZunPms               |

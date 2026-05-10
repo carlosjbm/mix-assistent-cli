@@ -84,6 +84,11 @@ const commands = [
     description: "Mostrar ayuda de un comando específico",
     usage: "help validate",
   },
+  {
+    name: "version",
+    description: "Ver la versión de OpenMix instalada",
+    usage: "version",
+  },
 ];
 
 function getCommands() {

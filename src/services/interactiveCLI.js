@@ -98,6 +98,8 @@ function executeCommand(command) {
         : "node src/utils/help.js";
       // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit", cwd: projectRoot });
+    } else if (cmd === "version") {
+      execSync("openmix-version", { stdio: "inherit" });
     } else {
       console.log(`${styles.dim}Comando no reconocido: ${cmd}${styles.reset}`);
     }

@@ -12,7 +12,7 @@ const styles = {
   dim: "\x1b[2m",
 };
 
-const installPath = "C:/Program Files (x86)/GET/Zun Software";
+const installPath = "C:/Program Files (x86)/GET/ZUN Software";
 
 function printHeader(title) {
   console.log(`\n${styles.bold}${styles.blue}${"=".repeat(60)}${styles.reset}`);
@@ -70,11 +70,15 @@ function showInstalledModules() {
     return;
   }
 
-  console.log(`${styles.blue}┌${"─".repeat(32)}┬${"─".repeat(20)}┐${styles.reset}`);
+  console.log(
+    `${styles.blue}┌${"─".repeat(32)}┬${"─".repeat(20)}┐${styles.reset}`,
+  );
   console.log(
     `${styles.blue}│${styles.reset} ${styles.bold}Módulo${" ".repeat(24)}${styles.reset}${styles.bold}Última Modificación${styles.reset}`,
   );
-  console.log(`${styles.blue}├${"─".repeat(32)}┼${"─".repeat(20)}┤${styles.reset}`);
+  console.log(
+    `${styles.blue}├${"─".repeat(32)}┼${"─".repeat(20)}┤${styles.reset}`,
+  );
 
   modules.forEach((mod) => {
     const name = (mod.name + " ".repeat(30)).substring(0, 30);
@@ -84,9 +88,13 @@ function showInstalledModules() {
     );
   });
 
-  console.log(`${styles.blue}└${"─".repeat(32)}┴${"─".repeat(20)}┘${styles.reset}`);
+  console.log(
+    `${styles.blue}└${"─".repeat(32)}┴${"─".repeat(20)}┘${styles.reset}`,
+  );
 
-  console.log(`\n${styles.blue}Total: ${modules.length} módulo(s) encontrado(s).${styles.reset}\n`);
+  console.log(
+    `\n${styles.blue}Total: ${modules.length} módulo(s) encontrado(s).${styles.reset}\n`,
+  );
 }
 
 function printInfo(msg) {

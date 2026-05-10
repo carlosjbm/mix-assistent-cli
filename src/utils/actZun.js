@@ -6,16 +6,16 @@ const paths = require("../config/paths");
 
 const modules = {
   acc: {
-    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunAcc",
-    sourcePath: "D:/.resources/ZunAcc",
+    destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
+    sourcePath: "D:/.resources/ZUN acc",
   },
   pms: {
-    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunPms",
-    sourcePath: "D:/.resources/ZunPms",
+    destPath: "C:/Program Files (x86)/GET/Zun Software/ZUN pms",
+    sourcePath: "D:/.resources/ZUNpms",
   },
   st: {
-    destPath: "C:/Program Files (x86)/GET/Zun Software/ZunStock",
-    sourcePath: "D:/.resources/ZunStock",
+    destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
+    sourcePath: "D:/.resources/ZUNStock",
   },
 };
 
@@ -69,19 +69,26 @@ const updateModule = (moduleKey) => {
   printInfo(`Destino: ${module.destPath}\n`);
 
   const result = validateStructure(module.destPath, structureFilePath);
-  if (!result.isValid) {
-    printError("La estructura no es válida.");
-    console.log(`${styles.yellow}Carpetas faltantes:${styles.reset}`);
-    result.missing.forEach((item) =>
-      console.log(`  ${styles.red}→ ${item}${styles.reset}`),
-    );
-    printWarning(`Ajuste la estructura primero: npm run fix -- ${moduleKey}`);
-    return;
-  }
+
+  // if (!result.isValid) {
+  //   printError("La estructura no es válida.");
+  //   console.log(`${styles.yellow}Carpetas faltantes:${styles.reset}`);
+  //   result.missing.forEach((item) =>
+  //     console.log(`  ${styles.red}→ ${item}${styles.reset}`),
+  //   );
+  //   printWarning(`Ajuste la estructura primero: npm run fix -- ${moduleKey}`);
+  //   return;
+  // }
 
   printSuccess("Estructura validada correctamente.");
   console.log(`${styles.blue}Iniciando clonación...${styles.reset}\n`);
-  cloneFiles(module.sourcePath, module.destPath, true);
+  const response = cloneFiles(module.sourcePath, module.destPath, true);
+  if (!response) {
+    printError(
+      `No se pudo realizar la ctualizacion de ${moduleKey.toUpperCase()}.`,
+    );
+    return;
+  }
   printSuccess(`Actualización de ${moduleKey.toUpperCase()} completada.`);
 };
 

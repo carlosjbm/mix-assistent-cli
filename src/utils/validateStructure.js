@@ -5,7 +5,7 @@ const readline = require("readline");
 const { adjustStructure } = require("./adjustStructure.js");
 const paths = require("../config/paths");
 
-const defaultInstallationPath = "C:/Program Files (x86)/GET/Zun Software";
+const defaultInstallationPath = "C:/Program Files (x86)/GET/ZUN Software";
 
 const styles = {
   reset: "\x1b[0m",
@@ -162,8 +162,7 @@ async function main() {
     finalStructurePath = paths.structure.default;
   } else if (targetPath) {
     finalTargetPath = targetPath;
-    finalStructurePath =
-      structureFilePath || paths.structure.default;
+    finalStructurePath = structureFilePath || paths.structure.default;
   } else {
     const rl = createInterface();
     finalTargetPath = await askQuestion(

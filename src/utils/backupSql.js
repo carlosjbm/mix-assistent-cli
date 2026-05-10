@@ -14,7 +14,7 @@ const styles = {
   dim: "\x1b[2m",
 };
 
-const backupPathDefault = "C:/Program Files (x86)/GET/Zun Software/backups";
+const backupPathDefault = "C:/Program Files (x86)/GET/ZUN Software/backups";
 
 const moduleConfig = {
   acc: { db: "ZunAcc" },
@@ -99,7 +99,9 @@ async function main() {
   const customBakPath = process.argv[3];
 
   if (!checkSqlCmd()) {
-    printError("sqlcmd no encontrado. Asegúrese de tener SQL Server Tools instalado.");
+    printError(
+      "sqlcmd no encontrado. Asegúrese de tener SQL Server Tools instalado.",
+    );
     printInfo("Ruta esperada: C:/Program Files/Microsoft SQL Server/...");
     process.exit(1);
   }

@@ -14,23 +14,23 @@ function showWelcome() {
 
     ╔═══════════════════════════════════════════════════════════╗
     ║                                                           ║
-    ║   OpenMix CLI - Asistente de Automatizacion              ║
+    ║   OpenMix CLI - Asistente de Automatizacion               ║
     ║ ========================================================= ║
     ║                                                           ║
-    ║   Bienvenido a OpenMix!                                  ║
+    ║   Bienvenido a OpenMix!                                   ║
     ║   Tu asistente para automatizar tareas del soporte ZUN    ║
     ║                                                           ║
-    ║   Para ver todos los comandos disponibles:               ║
-    ║     ${styles.cyan}help${styles.reset}                                              ║
+    ║   Para ver todos los comandos disponibles:                ║
+               ${styles.cyan}help${styles.reset}                     
     ║                                                           ║
-    ║   Para ayuda especifica de un comando:                   ║
-    ║     ${styles.cyan}help <comando>${styles.reset}                                  ║
-    ║     Ejemplo: ${styles.dim}help validate${styles.reset}                          ║
+    ║   Para ayuda especifica de un comando:                    ║
+              ${styles.cyan}help <comando>${styles.reset}           
+           Ejemplo: ${styles.dim}help validate${styles.reset}    
     ║                                                           ║
     ║ ********************************************************* ║
-    ║   Escribe un comando y presiona ENTER                    ║
-    ║   ESPACIO ESPACIO muestra sugerencias                    ║
-    ║   ESC limpia sugerencias, CTRL+C sale                    ║
+    ║   Escribe un comando y presiona ENTER                     ║
+    ║   ESPACIO ESPACIO muestra sugerencias                     ║
+    ║   ESC limpia sugerencias, CTRL+C sale                     ║
     ║ ********************************************************* ║
     ║                                                           ║
     ╚═══════════════════════════════════════════════════════════╝

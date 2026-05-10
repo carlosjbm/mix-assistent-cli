@@ -4,17 +4,17 @@ const modules = [
   {
     name: "Zunacc",
     flag: "--acc",
-    path: "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc/zunacc.exe",
   },
   {
     name: "ZunPms",
     flag: "--pms",
-    path: "C:/Program Files/Proton/VPN/ProtonVPN.Launcher.exe",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms/front.exe",
   },
   {
     name: "ZunStock",
     flag: "--st",
-    path: "C:/Program Files/Proton/VPN/ProtonVPN.Launcher.exe",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock/ZUNStock.exe",
   },
 ];
 
