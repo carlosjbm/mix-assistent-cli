@@ -6,16 +6,22 @@ const paths = require("../config/paths");
 
 const modules = {
   acc: {
-    destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
-    sourcePath: "D:/.resources/ZUN acc",
+    //destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
+    // sourcePath: "D:/.resources/ZUN acc",
+    destPath: `${paths.zun.acc.dest}`,
+    sourcePath: `${paths.zun.resourcesBase}/ZUN acc`,
   },
   pms: {
-    destPath: "C:/Program Files (x86)/GET/Zun Software/ZUN pms",
-    sourcePath: "D:/.resources/ZUNpms",
+    //destPath: "C:/Program Files (x86)/GET/Zun Software/ZUN pms",
+    // sourcePath: "D:/.resources/ZUNpms",
+    destPath: `${paths.zun.pms.dest}`,
+    sourcePath: `${paths.zun.resourcesBase}/ZUN pms`,
   },
   st: {
-    destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
-    sourcePath: "D:/.resources/ZUNStock",
+    //destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
+    // sourcePath: "D:/.resources/ZUNStock",
+    destPath: `${paths.zun.st.dest}`,
+    sourcePath: `${paths.zun.resourcesBase}/ZUNStock`,
   },
 };
 
