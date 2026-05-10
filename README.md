@@ -1,10 +1,10 @@
-# OPENMIX-ZUN
+# OPENMIX-CLI
 
 Asistente CLI para la automatización de procesos repetitivos en entornos ZUN.
 
 ## Descripción
 
-Openmix-zun es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN y obtener información de versión de ejecutables Windows.
+Openmix-cli es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN y obtener información de versión de ejecutables Windows.
 
 ## Requisitos
 
@@ -15,7 +15,7 @@ Openmix-zun es una herramienta de línea de comandos que permite validar y ajust
 ## Instalación
 
 ```bash
-npm install -g openmix-zun
+npm install -g openmix-cli
 # O desde el repositorio local
 npm link
 ```
