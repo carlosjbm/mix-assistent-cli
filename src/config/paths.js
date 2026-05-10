@@ -6,6 +6,7 @@ module.exports = {
   zun: {
     installBase: "C:/Program Files (x86)/GET/ZUN Software",
     resourcesBase: "D:/.resources",
+    backupPathDefault: "C:/Program Files (x86)/GET/ZUN Software/backups",
     acc: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc" },
     pms: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms" },
     st: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock" },

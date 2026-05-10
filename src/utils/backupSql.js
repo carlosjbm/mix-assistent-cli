@@ -3,6 +3,7 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
+const { zun } = require("../config/paths");
 
 const styles = {
   reset: "\x1b[0m",
@@ -14,7 +15,8 @@ const styles = {
   dim: "\x1b[2m",
 };
 
-const backupPathDefault = "C:/Program Files (x86)/GET/ZUN Software/backups";
+// const backupPathDefault = "C:/Program Files (x86)/GET/ZUN Software/backups";
+const backupPathDefault = `${zun.backupPathDefault}`;
 
 const moduleConfig = {
   acc: { db: "ZunAcc" },
