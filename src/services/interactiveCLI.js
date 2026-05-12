@@ -91,6 +91,10 @@ function executeCommand(command) {
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
+    } else if (cmd === "back") {
+      let fullCmd = "openmix-back";
+      if (script) fullCmd += ` ${script}`;
+      execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "help") {
       const projectRoot = path.join(__dirname, "..", "..");
       const fullCmd = script

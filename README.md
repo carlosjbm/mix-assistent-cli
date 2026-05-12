@@ -77,7 +77,7 @@ Actualiza los recursos de ZUN validando primero la estructura y luego clonando l
 **Pasos para actualizar un módulo:**
 
 1. **Preparar los recursos:** Crea una carpeta compartida donde estén los archivos de actualización (por ejemplo: `D:/RecursosZun/`) con una subcarpeta para cada módulo.
-2. **Realizar backup:** Ejecuta `openmix-backup -- <módulo>` para crear una copia de seguridad antes de actualizar.
+2. **Realizar backup:** Ejecuta `openmix-back <módulo>` para crear una copia de seguridad antes de actualizar.
 3. **Ejecutar la actualización:** Usa el comando `openmix-act -- <módulo>` para validar la estructura y clonar los archivos.
 4. **Verificar la versión:** Opcionalmente, ejecuta `openmix-versioninfo -- <módulo>` para confirmar que el ejecutable se actualizó correctamente.
 
@@ -108,6 +108,19 @@ openmix-clone origen.txt destino.txt
 openmix-clone /ruta/origen /ruta/destino --directory
 ```
 
+### Backup de Módulos ZUN
+
+Crea una copia de seguridad del módulo en una carpeta `recicle` dentro del mismo directorio.
+
+```bash
+# Crear backup de un módulo
+openmix-back acc    # ZunAcc
+openmix-back pms    # ZunPms
+openmix-back st     # ZunStock
+```
+
+El backup muestra una barra de progreso con el porcentaje de archivos copiados.
+
 ## Comandos Disponibles
 
 | Comando                                     | Descripción                         |
@@ -125,6 +138,7 @@ openmix-clone /ruta/origen /ruta/destino --directory
 | `openmix-act -- <modulo>`                   | Actualizar ZUN (acc, pms, st)       |
 | `openmix-clone <origen> <dest>`             | Clonar archivo                      |
 | `openmix-clone <origen> <dest> --directory` | Clonar directorio                   |
+| `openmix-back <modulo>`                     | Crear backup (acc, pms, st)          |
 | `openmix-installed`                         | Ver módulos ZUN instalados          |
 
 ## Archivo structure.md

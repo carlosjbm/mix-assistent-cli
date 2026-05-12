@@ -89,6 +89,21 @@ const commands = [
     description: "Ver la versión de OpenMix instalada",
     usage: "version",
   },
+  {
+    name: "back --acc",
+    description: "Crear backup de ZunAcc en carpeta recicle",
+    usage: "back --acc",
+  },
+  {
+    name: "back --pms",
+    description: "Crear backup de ZunPms en carpeta recicle",
+    usage: "back --pms",
+  },
+  {
+    name: "back --st",
+    description: "Crear backup de ZunStock en carpeta recicle",
+    usage: "back --st",
+  },
 ];
 
 function getCommands() {

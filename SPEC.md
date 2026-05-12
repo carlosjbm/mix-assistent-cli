@@ -66,6 +66,7 @@ opentest/
     │   ├── interactiveCLI.js    # Manejo de entrada interactiva
     │   ├── cloneFiles.js        # Clonación de archivos
     │   ├── fixFolderEspecific.js # Corrección de estructuras
+    │   ├── backupModule.js      # Backup de módulos ZUN
     │   └── autoComplete.js     # Sistema de autocompletado
     └── utils/
         ├── validateStructure.js # Validación de estructuras
@@ -90,7 +91,7 @@ opentest/
 | `openmix-fix` | Ajustar estructura de carpetas |
 | `openmix-clone` | Clonar archivos entre directorios |
 | `openmix-act` | Actualizar módulo ZUN |
-| `openmix-backup` | Crear backup de base de datos SQL |
+| `openmix-back` | Crear backup de módulo en carpeta recicle |
 | `openmix-installed` | Listar módulos instalados |
 | `openmix-versioninfo` | Ver versión de ejecutable Windows |
 | `openmix-help` | Mostrar ayuda de comandos |
@@ -105,7 +106,7 @@ opentest/
 | `npm run act` | Actualizar ZUN |
 | `npm run fix` | Ajustar estructura |
 | `npm run installed` | Ver módulos instalados |
-| `npm run backup` | Crear backup SQL |
+| `npm run back` | Crear backup de módulo |
 | `npm run help` | Mostrar ayuda |
 | `npm run version` | Ver versión de OpenMix |
 | `npm run test` | Ejecutar pruebas |
@@ -173,17 +174,16 @@ Pasos para actualizar:
 3. **Ejecutar actualización:** Usar `openmix-act -- <módulo>` para validar estructura y clonar archivos
 4. **Verificar versión:** Opcionalmente usar `openmix-versioninfo -- <módulo>`
 
-#### Crear Backup SQL
+#### Crear Backup de Módulo
 
 ```bash
 # Backup de un módulo específico
-openmix-backup -- acc
-
-# Modo interactivo (seleccionar módulo)
-openmix-backup
+openmix-back acc
+openmix-back pms
+openmix-back st
 ```
 
-Crea una copia de seguridad de la base de datos SQL del módulo seleccionado.
+Crea una copia de seguridad del módulo en una carpeta `recicle` dentro del mismo directorio del módulo. Muestra una barra de progreso con el porcentaje de archivos copiados.
 
 #### Clonar Archivos
 

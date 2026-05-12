@@ -84,6 +84,21 @@ const commands = {
     ],
     module: "informacion",
   },
+  back: {
+    name: "back",
+    description: "Crea backup de un modulo ZUN en carpeta recicle",
+    usage: [
+      "back --acc",
+      "back --pms",
+      "back --st",
+    ],
+    examples: [
+      "back --acc - Crear backup de ZunAcc",
+      "back --pms - Crear backup de ZunPms",
+      "back --st - Crear backup de ZunStock",
+    ],
+    module: "backup",
+  },
   help: {
     name: "help",
     description: "Muestra la ayuda de comandos",

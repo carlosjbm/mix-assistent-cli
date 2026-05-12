@@ -12,7 +12,8 @@
     "openmix-installed": "src/utils/installedModules.js",
     "openmix-versioninfo": "src/utils/versionInfo.js",
     "openmix-help": "src/utils/help.js",
-    "openmix-version": "src/utils/version.js"
+    "openmix-version": "src/utils/version.js",
+    "openmix-back": "src/services/backupModule.js"
   },
   "scripts": {
     "start": "node src/index.js",
