@@ -1,6 +1,6 @@
 {
   "name": "openmix-cli",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Asistente CLI para la automatización de procesos repetitivos del soporte a la SUITE ZUN",
   "main": "src/index.js",
   "bin": {
