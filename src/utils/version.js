@@ -30,7 +30,7 @@ ${styles.blue}──────────────────────
     openmix-validate     Validar estructura de carpetas
     openmix-fix          Ajustar estructura
     openmix-act          Actualizar módulo ZUN
-    openmix-backup       Crear backup de base de datos
+    openmix-back         Crear backup de modulo
     openmix-versioninfo  Ver info de ejecutable
     openmix-installed    Ver módulos instalados
     openmix-clone        Clonar archivos/directorios
