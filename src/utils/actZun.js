@@ -18,10 +18,20 @@ const modules = {
     sourcePath: `${paths.zun.resourcesBase}/ZUN pms`,
   },
   st: {
-    //destPath: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
-    // sourcePath: "D:/.resources/ZUNStock",
     destPath: `${paths.zun.st.dest}`,
     sourcePath: `${paths.zun.resourcesBase}/ZUNStock`,
+  },
+  cc: {
+    destPath: `${paths.zun.cc.dest}`,
+    sourcePath: `${paths.zun.resourcesBase}/ZUNcc`,
+  },
+  // aft: {
+  //   destPath: `${paths.zun.aft.dest}`,
+  //   sourcePath: `${paths.zun.resourcesBase}/ZUN aft`,
+  // },
+  ut: {
+    destPath: `${paths.zun.ut.dest}`,
+    sourcePath: `${paths.zun.resourcesBase}/ZUNutiles`,
   },
 };
 

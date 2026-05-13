@@ -7,6 +7,9 @@ const modules = {
   acc: paths.zun.acc.dest,
   pms: paths.zun.pms.dest,
   st: paths.zun.st.dest,
+  cc: paths.zun.cc.dest,
+  // aft: paths.zun.aft.dest,
+  ut: paths.zun.ut.dest,
 };
 
 const styles = {

@@ -4,11 +4,7 @@ const commands = {
   validate: {
     name: "validate",
     description: "Valida la estructura de carpetas de un modulo ZUN",
-    usage: [
-      "validate",
-      "validate <ruta>",
-      "validate --i",
-    ],
+    usage: ["validate", "validate <ruta>", "validate --i"],
     examples: [
       "validate - Modo interactivo",
       "validate C:/ZunAcc - Validar ruta especifica",
@@ -19,9 +15,7 @@ const commands = {
   fix: {
     name: "fix",
     description: "Ajusta la estructura de carpetas faltantes",
-    usage: [
-      "fix -- <modulo>",
-    ],
+    usage: ["fix -- <modulo>"],
     examples: [
       "fix -- acc - Ajustar estructura de ZunAcc",
       "fix -- pms - Ajustar estructura de ZunPms",
@@ -32,9 +26,7 @@ const commands = {
   clone: {
     name: "clone",
     description: "Clona archivos de una carpeta a otra",
-    usage: [
-      "clone <origen> <dest> --directory",
-    ],
+    usage: ["clone <origen> <dest> --directory"],
     examples: [
       "clone C:/origen C:/dest - Clonar archivos",
       "clone C:/origen C:/dest --directory - Clonar incluyendo carpetas",
@@ -44,10 +36,7 @@ const commands = {
   act: {
     name: "act",
     description: "Actualiza recursos ZUN de un modulo",
-    usage: [
-      "act",
-      "act -- <modulo>",
-    ],
+    usage: ["act", "act -- <modulo>"],
     examples: [
       "act - Ver modulos disponibles",
       "act -- acc - Actualizar ZunAcc",
@@ -59,12 +48,8 @@ const commands = {
   installed: {
     name: "installed",
     description: "Muestra los modulos ZUN instalados",
-    usage: [
-      "installed",
-    ],
-    examples: [
-      "installed - Ver lista de modulos instalados",
-    ],
+    usage: ["installed"],
+    examples: ["installed - Ver lista de modulos instalados"],
     module: "modulos",
   },
   versioninfo: {
@@ -91,6 +76,9 @@ const commands = {
       "back --acc",
       "back --pms",
       "back --st",
+      "back --cc",
+      "back --aft",
+      "back --ut",
     ],
     examples: [
       "back --acc - Crear backup de ZunAcc",
@@ -102,10 +90,7 @@ const commands = {
   help: {
     name: "help",
     description: "Muestra la ayuda de comandos",
-    usage: [
-      "help",
-      "help <comando>",
-    ],
+    usage: ["help", "help <comando>"],
     examples: [
       "help - Ver todos los comandos",
       "help validate - Ver ayuda especifica de validate",
@@ -147,12 +132,12 @@ function printCommandHelp(cmd, filter) {
   console.log(s("dim") + cmd.description + s("reset") + "\n");
 
   console.log(s("bold") + s("yellow") + "Uso:" + s("reset"));
-  cmd.usage.forEach(function(u) {
+  cmd.usage.forEach(function (u) {
     console.log("  " + s("green") + u + s("reset"));
   });
 
   console.log("\n" + s("bold") + s("yellow") + "Ejemplos:" + s("reset"));
-  cmd.examples.forEach(function(e) {
+  cmd.examples.forEach(function (e) {
     console.log("  " + s("dim") + e + s("reset"));
   });
 
@@ -165,27 +150,65 @@ function showHelp(filter) {
   if (!filterLower || filterLower === "all") {
     printHeader("OpenMix CLI - Ayuda de Comandos");
 
-    console.log(s("bold") + "Uso:" + s("reset") + " npm run <comando> [opciones]");
-    console.log(s("bold") + "Alias:" + s("reset") + " npx openmix-<comando> [opciones]\n");
+    console.log(
+      s("bold") + "Uso:" + s("reset") + " npm run <comando> [opciones]",
+    );
+    console.log(
+      s("bold") + "Alias:" + s("reset") + " npx openmix-<comando> [opciones]\n",
+    );
 
-    console.log(s("bold") + s("yellow") + "Comandos disponibles:" + s("reset") + "\n");
+    console.log(
+      s("bold") + s("yellow") + "Comandos disponibles:" + s("reset") + "\n",
+    );
 
-    Object.values(commands).forEach(function(cmd) {
+    Object.values(commands).forEach(function (cmd) {
       console.log(
-        s("bold") + s("green") + "  " + cmd.name.padEnd(15) + s("reset") + " " + s("dim") + cmd.description + s("reset")
+        s("bold") +
+          s("green") +
+          "  " +
+          cmd.name.padEnd(15) +
+          s("reset") +
+          " " +
+          s("dim") +
+          cmd.description +
+          s("reset"),
       );
     });
 
-    console.log("\n" + s("bold") + "Usa:" + s("reset") + " " + s("cyan") + "help <comando>" + s("reset") + " para ver detalles especificos");
-    console.log(s("bold") + "Ejemplo:" + s("reset") + " " + s("dim") + "help validate" + s("reset") + "\n");
-  } else {
-    const found = Object.values(commands).find(
-      function(cmd) { return cmd.name.toLowerCase() === filterLower; }
+    console.log(
+      "\n" +
+        s("bold") +
+        "Usa:" +
+        s("reset") +
+        " " +
+        s("cyan") +
+        "help <comando>" +
+        s("reset") +
+        " para ver detalles especificos",
     );
+    console.log(
+      s("bold") +
+        "Ejemplo:" +
+        s("reset") +
+        " " +
+        s("dim") +
+        "help validate" +
+        s("reset") +
+        "\n",
+    );
+  } else {
+    const found = Object.values(commands).find(function (cmd) {
+      return cmd.name.toLowerCase() === filterLower;
+    });
 
     if (!found) {
       console.log(s("red") + "Comando no encontrado: " + filter + s("reset"));
-      console.log(s("dim") + "Usa 'help' sin filtros para ver todos los comandos" + s("reset") + "\n");
+      console.log(
+        s("dim") +
+          "Usa 'help' sin filtros para ver todos los comandos" +
+          s("reset") +
+          "\n",
+      );
       return;
     }
 

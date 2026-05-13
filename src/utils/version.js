@@ -1,17 +1,17 @@
 #! /usr/bin/env node
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
-const pkgPath = path.join(__dirname, '..', '..', 'package.json');
-const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+const pkgPath = path.join(__dirname, "..", "..", "package.json");
+const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 
 const styles = {
-  reset: '\x1b[0m',
-  green: '\x1b[32m',
-  blue: '\x1b[34m',
-  bold: '\x1b[1m',
-  dim: '\x1b[2m',
-  cyan: '\x1b[36m',
+  reset: "\x1b[0m",
+  green: "\x1b[32m",
+  blue: "\x1b[34m",
+  bold: "\x1b[1m",
+  dim: "\x1b[2m",
+  cyan: "\x1b[36m",
 };
 
 function showVersion() {
@@ -21,7 +21,7 @@ ${styles.bold}  OpenMix ZUN - Información de versión${styles.reset}
 ${styles.blue}════════════════════════════════════════════════════════════${styles.reset}
 
   ${styles.green}Versión:${styles.reset}    ${styles.bold}${pkg.version}${styles.reset}
-  ${styles.green}Módulos:${styles.reset}   acc | pms | st
+  ${styles.green}Módulos:${styles.reset}   acc | pms | st | cc | aft | ut 
 
 ${styles.blue}────────────────────────────────────────────────────────────────${styles.reset}
 

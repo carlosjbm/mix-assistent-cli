@@ -1,0 +1,4 @@
+Manual/
+Reportes/
+licence/
+recicle/

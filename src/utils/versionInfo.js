@@ -16,6 +16,21 @@ const modules = [
     flag: "--st",
     path: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock/ZUNStock.exe",
   },
+  {
+    name: "ZunCC",
+    flag: "--cc",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc/ZUNcc.exe",
+  },
+  // {
+  //   name: "Zun aft",
+  //   flag: "--aft",
+  //   path: "C:/Program Files (x86)/GET/ZUN Software/ZUN aft/ZUN aft.exe",
+  // },
+  {
+    name: "ZunUtiles",
+    flag: "--ut",
+    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles/ZUNútiles.exe",
+  },
 ];
 
 const styles = {
