@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 const fs = require("fs");
 const path = require("path");
+const paths = require("../config/paths");
 
 const styles = {
   reset: "\x1b[0m",
@@ -12,7 +13,7 @@ const styles = {
   dim: "\x1b[2m",
 };
 
-const installPath = "C:/Program Files (x86)/GET/ZUN Software";
+const installPath = paths.zun.installBase;
 
 function printHeader(title) {
   console.log(`\n${styles.bold}${styles.blue}${"=".repeat(60)}${styles.reset}`);

@@ -1,31 +1,36 @@
 #! /usr/bin/env node
+const paths = require("../config/paths");
 const { adjustStructure } = require("../utils/adjustStructure");
 const path = require("path");
 
 const folders = {
+  src: {
+    path: paths.zun.resourcesBase,
+    structureFile: paths.structure.resourcePath,
+  },
   acc: {
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
-    structureFile: "opentest/folders_strs/acc_folder_structure.md",
+    path: paths.zun.acc.dest,
+    structureFile: paths.structure.acc,
   },
   pms: {
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms",
-    structureFile: "opentest/folders_strs/pms_folder_structure.md",
+    path: paths.zun.pms.dest,
+    structureFile: paths.structure.pms,
   },
   st: {
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
-    structureFile: "opentest/folders_strs/st_folder_structure.md",
+    path: paths.zun.st.dest,
+    structureFile: paths.structure.st,
   },
   cc: {
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc",
-    structureFile: "opentest/folders_strs/cc_folder_structure.md",
+    path: paths.zun.cc.dest,
+    structureFile: paths.structure.cc,
   },
   // aft: {
-  //   path: "C:/Program Files (x86)/GET/ZUN Software/ZUN aft",
-  //   structureFile: "opentest/folders_strs/aft_folder_structure.md",
+  //   path:paths.zun.aft.dest,
+  //structureFile:paths.structure.aft
   // },
   ut: {
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles",
-    structureFile: "opentest/folders_strs/ut_folder_structure.md",
+    path: paths.zun.ut.dest,
+    structureFile: paths.structure.ut,
   },
 };
 
@@ -67,7 +72,7 @@ const fixFolder = () => {
 
   if (!arg) {
     printHeader("FIX - Ajuste de Estructura");
-    console.log(`${styles.bold}Uso:${styles.reset} npm run fix -- <modulo>`);
+    console.log(`${styles.bold}Uso:${styles.reset} opx-fix -- <modulo>`);
     console.log(`${styles.dim}Módulos disponibles:${styles.reset}`);
     Object.keys(folders).forEach((key) =>
       console.log(`  ${styles.blue}→ ${key}${styles.reset}`),
@@ -85,7 +90,8 @@ const fixFolder = () => {
     return;
   }
 
-  const structureFilePath = path.join(process.cwd(), module.structureFile);
+  // const structureFilePath = path.join(process.cwd(), module.structureFile);
+  const structureFilePath = module.structureFile;
 
   printHeader("FIX - Ajuste de Estructura");
   printSuccess(`Módulo: ${arg.toUpperCase()}`);

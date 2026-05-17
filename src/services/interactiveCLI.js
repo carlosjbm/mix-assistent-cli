@@ -48,22 +48,22 @@ function executeCommand(command) {
 
   try {
     if (cmd === "validate") {
-      let fullCmd = "openmix-validate";
+      let fullCmd = "opx-validate";
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "fix") {
-      let fullCmd = "openmix-fix ";
+      let fullCmd = "opx-fix ";
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "act") {
-      let fullCmd = "openmix-act ";
+      let fullCmd = "opx-act ";
       if (script) fullCmd += ` ${script}`;
       // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "clone") {
-      let fullCmd = "openmix-clone";
+      let fullCmd = "opx-clone";
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
@@ -75,24 +75,24 @@ function executeCommand(command) {
       execSync("npm test", { stdio: "inherit" });
     } else if (cmd === "installed") {
       console.log(`${styles.cyan}$ npm run installed${styles.reset}\n`);
-      execSync("openmix-installed", { stdio: "inherit" });
+      execSync("opx-installed", { stdio: "inherit" });
     } else if (cmd === "adjust") {
       let fullCmd = "node src/utils/adjustStructure.js";
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "versioninfo") {
-      let fullCmd = "openmix-versioninfo";
+      let fullCmd = "opx-versioninfo";
       if (script) fullCmd += ` "${script}"`;
       // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit", shell: true });
     } else if (cmd === "versioninfo acc") {
-      let fullCmd = "openmix-versioninfo --acc";
+      let fullCmd = "opx-versioninfo --acc";
       if (script) fullCmd += ` ${script}`;
       //console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "back") {
-      let fullCmd = "openmix-back";
+      let fullCmd = "opx-back";
       if (script) fullCmd += ` ${script}`;
       execSync(fullCmd, { stdio: "inherit" });
     } else if (cmd === "help") {
@@ -103,7 +103,7 @@ function executeCommand(command) {
       // console.log(`${styles.cyan}$ ${fullCmd}${styles.reset}\n`);
       execSync(fullCmd, { stdio: "inherit", cwd: projectRoot });
     } else if (cmd === "version") {
-      execSync("openmix-version", { stdio: "inherit" });
+      execSync("opx-version", { stdio: "inherit" });
     } else {
       console.log(`${styles.dim}Comando no reconocido: ${cmd}${styles.reset}`);
     }

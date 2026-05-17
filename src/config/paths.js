@@ -7,12 +7,33 @@ module.exports = {
     installBase: "C:/Program Files (x86)/GET/ZUN Software",
     resourcesBase: "D:/.resources",
     backupPathDefault: "C:/Program Files (x86)/GET/ZUN Software/backups",
-    acc: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc" },
-    pms: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms" },
-    st: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock" },
-    cc: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc" },
-    // aft: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN aft" },
-    ut: { dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles" },
+    acc: {
+      flag: "--acc",
+      dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc",
+      exePath: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc/zunacc.exe",
+    },
+    pms: {
+      flag: "--pms",
+      dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms",
+      exePath: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms/front.exe",
+    },
+    st: {
+      flag: "--st",
+      dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock",
+      exePath: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock/ZUNStock.exe",
+    },
+    cc: {
+      flag: "--cc",
+      dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc",
+      exePath: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc/ZUNcc.exe",
+    },
+    // aft: { flag:"--aft",dest: "C:/Program Files (x86)/GET/ZUN Software/ZUN aft", exePath:"C:/Program Files (x86)/GET/ZUN Software/ZUN aft/ZUN aft.exe" },
+    ut: {
+      flag: "--ut",
+      dest: "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles",
+      exePath:
+        "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles/ZUNútiles.exe",
+    },
   },
   structure: {
     acc: path.join(projectRoot, "folders_strs", "acc_folder_structure.md"),

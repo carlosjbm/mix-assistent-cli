@@ -1,25 +1,26 @@
 #! /usr/bin/env node
 const vi = require("win-version-info");
+const paths = require("../config/paths");
 const modules = [
   {
-    name: "Zunacc",
-    flag: "--acc",
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN acc/zunacc.exe",
+    name: "ZUN acc (Contabilidad)",
+    flag: paths.zun.acc.flag,
+    path: paths.zun.acc.exePath,
   },
   {
-    name: "ZunPms",
-    flag: "--pms",
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUN pms/front.exe",
+    name: "ZUN pms (Front de Carpeta)",
+    flag: paths.zun.pms.flag,
+    path: paths.zun.pms.exePath,
   },
   {
-    name: "ZunStock",
-    flag: "--st",
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNStock/ZUNStock.exe",
+    name: "ZUN Stock (Almacén)",
+    flag: paths.zun.st.flag,
+    path: paths.zun.st.exePath,
   },
   {
-    name: "ZunCC",
-    flag: "--cc",
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNcc/ZUNcc.exe",
+    name: "ZUN cc (Validador)",
+    flag: paths.zun.cc.flag,
+    path: paths.zun.cc.exePath,
   },
   // {
   //   name: "Zun aft",
@@ -27,9 +28,9 @@ const modules = [
   //   path: "C:/Program Files (x86)/GET/ZUN Software/ZUN aft/ZUN aft.exe",
   // },
   {
-    name: "ZunUtiles",
-    flag: "--ut",
-    path: "C:/Program Files (x86)/GET/ZUN Software/ZUNutiles/ZUNútiles.exe",
+    name: "ZUN Utiles (Útiles y Herramientas)",
+    flag: paths.zun.ut.flag,
+    path: paths.zun.ut.exePath,
   },
 ];
 
@@ -53,15 +54,15 @@ function resolveModulePath(arg) {
 
 function showHelp() {
   console.log(
-    `${styles.yellow}Usage: openmix-versioninfo <ruta-ejecutable | flag>${styles.reset}`,
+    `${styles.yellow}Usage: opx-versioninfo <ruta-ejecutable | flag>${styles.reset}`,
   );
   console.log(`${styles.dim}Ejemplos:${styles.reset}`);
   console.log(
     `  ${styles.green}openmix-versioninfo "C:/ruta/al/ejecutable.exe"${styles.reset}`,
   );
-  console.log(`  ${styles.green}openmix-versioninfo --acc${styles.reset}`);
-  console.log(`  ${styles.green}openmix-versioninfo --pms${styles.reset}`);
-  console.log(`  ${styles.green}openmix-versioninfo --st${styles.reset}`);
+  console.log(`  ${styles.green}opx-versioninfo --acc${styles.reset}`);
+  console.log(`  ${styles.green}opx-versioninfo --pms${styles.reset}`);
+  console.log(`  ${styles.green}opx-versioninfo --st${styles.reset}`);
   console.log(`\n${styles.dim}Flags disponibles:${styles.reset}`);
   modules.forEach((m) => {
     console.log(`  ${styles.cyan}${m.flag}${styles.reset} - ${m.name}`);
