@@ -22,5 +22,10 @@ module.exports = {
     // aft: path.join(projectRoot, "folders_strs", "aft_folder_structure.md"),
     ut: path.join(projectRoot, "folders_strs", "ut_folder_structure.md"),
     default: path.join(projectRoot, "folders_strs", "structure.md"),
+    resourcePath: path.join(
+      projectRoot,
+      "folders_strs",
+      "resource_structure.md",
+    ),
   },
 };

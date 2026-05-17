@@ -2,6 +2,13 @@
 
 Asistente CLI para la automatización de procesos repetitivos en entornos ZUN.
 
+## Novedades en v1.4.0
+
+- **Nuevos módulos ZUN cc y ZUN utiles** — Ahora se soportan 5 módulos: acc, pms, st, cc, ut
+- **`openmix-back`** — Nuevo comando para crear backup del módulo en carpeta `recicle` con barra de progreso
+- **Pantalla de bienvenida rediseñada** — Más limpia y minimalista
+- **Sistema de rutas centralizado** — Todas las rutas en `src/config/paths.js` para facilitar mantenimiento
+
 ## Descripción
 
 Openmix-cli es una herramienta de línea de comandos que permite validar y ajustar la estructura de carpetas de un proyecto contra un patrón definido en un archivo `structure.md`. También incluye funcionalidad para actualizar recursos de ZUN y obtener información de versión de ejecutables Windows.
@@ -42,6 +49,8 @@ openmix-versioninfo "C:/Program Files/BraveSoftware/Brave-Browser/Application/br
 openmix-versioninfo --acc    # ZunAcc
 openmix-versioninfo --pms    # ZunPms
 openmix-versioninfo --st     # ZunStock
+openmix-versioninfo --cc     # ZunCC
+openmix-versioninfo --ut     # ZunUtiles
 ```
 
 ### Validación de Estructura
@@ -68,6 +77,8 @@ Ajusta la estructura de carpetas automáticamente creando las carpetas faltantes
 openmix-fix -- acc
 openmix-fix -- pms
 openmix-fix -- st
+openmix-fix -- cc
+openmix-fix -- ut
 ```
 
 ### Actualización de ZUN
@@ -86,6 +97,8 @@ Actualiza los recursos de ZUN validando primero la estructura y luego clonando l
 openmix-act -- acc   # Accounting
 openmix-act -- pms   # Point of Sale
 openmix-act -- st    # Inventory
+openmix-act -- cc    # ZUN CC
+openmix-act -- ut    # ZUN Utiles
 ```
 
 ### Verificar Módulos Instalados
@@ -117,6 +130,8 @@ Crea una copia de seguridad del módulo en una carpeta `recicle` dentro del mism
 openmix-back acc    # ZunAcc
 openmix-back pms    # ZunPms
 openmix-back st     # ZunStock
+openmix-back cc     # ZunCC
+openmix-back ut     # ZunUtiles
 ```
 
 El backup muestra una barra de progreso con el porcentaje de archivos copiados.
@@ -131,14 +146,16 @@ El backup muestra una barra de progreso con el porcentaje de archivos copiados.
 | `openmix-versioninfo --acc`                 | Ver versión de ZunAcc               |
 | `openmix-versioninfo --pms`                 | Ver versión de ZunPms               |
 | `openmix-versioninfo --st`                  | Ver versión de ZunStock             |
+| `openmix-versioninfo --cc`                  | Ver versión de ZunCC                |
+| `openmix-versioninfo --ut`                  | Ver versión de ZunUtiles            |
 | `openmix-validate`                          | Modo interactivo de validación      |
 | `openmix-validate <ruta>`                   | Validar carpeta específica          |
 | `openmix-validate -- i`                     | Validar ruta por defecto            |
-| `openmix-fix -- <modulo>`                   | Ajustar estructura (acc, pms, st)   |
-| `openmix-act -- <modulo>`                   | Actualizar ZUN (acc, pms, st)       |
+| `openmix-fix -- <modulo>`                   | Ajustar estructura (acc, pms, st, cc, ut) |
+| `openmix-act -- <modulo>`                   | Actualizar ZUN (acc, pms, st, cc, ut) |
 | `openmix-clone <origen> <dest>`             | Clonar archivo                      |
 | `openmix-clone <origen> <dest> --directory` | Clonar directorio                   |
-| `openmix-back <modulo>`                     | Crear backup (acc, pms, st)          |
+| `openmix-back <modulo>`                     | Crear backup (acc, pms, st, cc, ut) |
 | `openmix-installed`                         | Ver módulos ZUN instalados          |
 
 ## Archivo structure.md

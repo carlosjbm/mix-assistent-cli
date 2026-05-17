@@ -118,7 +118,7 @@ function s(style) {
 }
 
 function printHeader(title) {
-  const line = "=".repeat(60);
+  const line = "=".repeat(80);
   console.log("\n" + s("bold") + s("blue") + line + s("reset"));
   console.log(s("bold") + s("blue") + title + s("reset"));
   console.log(s("bold") + s("blue") + line + s("reset") + "\n");
@@ -150,11 +150,9 @@ function showHelp(filter) {
   if (!filterLower || filterLower === "all") {
     printHeader("OpenMix CLI - Ayuda de Comandos");
 
+    console.log(s("bold") + "Uso:" + s("reset") + " opx <comando> [opciones]");
     console.log(
-      s("bold") + "Uso:" + s("reset") + " npm run <comando> [opciones]",
-    );
-    console.log(
-      s("bold") + "Alias:" + s("reset") + " npx openmix-<comando> [opciones]\n",
+      s("bold") + "Interactivo:" + s("reset") + "<comando> [opciones]\n",
     );
 
     console.log(

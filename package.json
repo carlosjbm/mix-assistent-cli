@@ -5,15 +5,15 @@
   "main": "src/index.js",
   "bin": {
     "openmix": "src/index.js",
-    "openmix-validate": "src/utils/validateStructure.js",
-    "openmix-clone": "src/services/cloneFiles.js",
-    "openmix-act": "src/utils/actZun.js",
-    "openmix-fix": "src/services/fixFolderEspecific.js",
-    "openmix-installed": "src/utils/installedModules.js",
-    "openmix-versioninfo": "src/utils/versionInfo.js",
-    "openmix-help": "src/utils/help.js",
-    "openmix-version": "src/utils/version.js",
-    "openmix-back": "src/services/backupModule.js"
+    "opx-validate": "src/utils/validateStructure.js",
+    "opx-clone": "src/services/cloneFiles.js",
+    "opx-act": "src/utils/actZun.js",
+    "opx-fix": "src/services/fixFolderEspecific.js",
+    "opx-installed": "src/utils/installedModules.js",
+    "opx-versioninfo": "src/utils/versionInfo.js",
+    "opx-help": "src/utils/help.js",
+    "opx-version": "src/utils/version.js",
+    "opx-back": "src/services/backupModule.js"
   },
   "scripts": {
     "start": "node src/index.js",

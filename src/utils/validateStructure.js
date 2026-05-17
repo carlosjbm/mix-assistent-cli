@@ -6,6 +6,7 @@ const { adjustStructure } = require("./adjustStructure.js");
 const paths = require("../config/paths");
 
 const defaultInstallationPath = "C:/Program Files (x86)/GET/ZUN Software";
+const defaultResourcePath = "D:/.resources";
 
 const styles = {
   reset: "\x1b[0m",
@@ -151,13 +152,17 @@ async function askQuestion(rl, question) {
 async function main() {
   const arg = process.argv[2];
   const useDefaultPath = arg === "i";
+  const useResourcePath = arg === "r";
   const targetPath = useDefaultPath ? null : arg;
   const structureFilePath = process.argv[3];
 
   let finalTargetPath;
   let finalStructurePath;
 
-  if (useDefaultPath) {
+  if (useResourcePath) {
+    finalTargetPath = defaultResourcePath;
+    finalStructurePath = paths.structure.resourcePath;
+  } else if (useDefaultPath) {
     finalTargetPath = defaultInstallationPath;
     finalStructurePath = paths.structure.default;
   } else if (targetPath) {
