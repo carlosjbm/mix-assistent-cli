@@ -17,23 +17,23 @@ const styles = {
 function showVersion() {
   console.log(`
 ${styles.bold}${styles.blue}════════════════════════════════════════════════════════════${styles.reset}
-${styles.bold}  OpenMix ZUN - Información de versión${styles.reset}
+${styles.bold}  OpenMix CLI - Información de versión${styles.reset}
 ${styles.blue}════════════════════════════════════════════════════════════${styles.reset}
 
   ${styles.green}Versión:${styles.reset}    ${styles.bold}${pkg.version}${styles.reset}
   ${styles.green}Módulos:${styles.reset}   acc | pms | st | cc | aft | ut 
 
-${styles.blue}────────────────────────────────────────────────────────────────${styles.reset}
+${styles.blue}────────────────────────────────────────────────────────────${styles.reset}
 
   ${styles.dim}Comandos disponibles:${styles.reset}
     openmix              Modo interactivo
-    openmix-validate     Validar estructura de carpetas
-    openmix-fix          Ajustar estructura
-    openmix-act          Actualizar módulo ZUN
-    openmix-back         Crear backup de modulo
-    openmix-versioninfo  Ver info de ejecutable
-    openmix-installed    Ver módulos instalados
-    openmix-clone        Clonar archivos/directorios
+    opx-validate     Validar estructura de carpetas
+    opx-fix          Ajustar estructura
+    opx-act          Actualizar módulo ZUN
+    opx-back         Crear backup de modulo
+    opx-versioninfo  Ver info de ejecutable
+    opx-installed    Ver módulos instalados
+    opx-clone        Clonar archivos/directorios
 
 ${styles.blue}════════════════════════════════════════════════════════════${styles.reset}
 `);
